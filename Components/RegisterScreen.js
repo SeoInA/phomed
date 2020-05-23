@@ -5,7 +5,8 @@ import {
     Text,
     TextInput,
     TouchableOpacity,
-    StyleSheet
+    StyleSheet,
+    Alert
 } from 'react-native';
 import { Button, Icon,Container,Body, Right, Left, Header } from 'native-base';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
@@ -17,9 +18,55 @@ export default class RegisterScreen extends Component{
         header: null,
     };
 
+    /*
     _doLogin(){
         // do something
         this.props.navigation.replace('Login')
+    }
+    */
+    constructor(props){
+        super(props)
+
+        this.state = {
+            userID: '',
+            passwd: '',
+            name: '',
+            gender: '',
+            age: '',
+            user_phone: ''
+        }
+    }
+
+    UserRegistrationFunction = () =>{
+
+        const userID = this.state.userID;
+        const{passwd} = this.state;
+        const{name} = this.state;
+        const{gender} = this.state;
+        const{age} = this.state;
+        const{user_phone} = this.state;
+
+        fetch('http://seongmindbphp.000webhostapp.com',{
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type' : 'application/json',
+            },
+            body: JSON.stringify({
+                userID: userID,
+                passwd: passwd,
+                name: name,
+                gender: gender,
+                age: age,
+                user_phone: user_phone
+            })
+        }).then((response)=> response.json())
+                .then((responseJson)=>{
+                    
+                    Alert.alert(responseJson);
+                }).catch((error) =>{
+                    console.error(error);
+                });
     }
 
     render(){
@@ -37,27 +84,34 @@ export default class RegisterScreen extends Component{
                 <View style={styles.formArea}>
                     <TextInput
                         style={styles.textForm}
-                        placeholder={"Name"}/>
+                        placeholder={"User ID :"}
+                        onChangeText = {userID =>this.setState({userID})}/>
                     <TextInput
                         style={styles.textForm}
-                        placeholder={"ID"}/>
+                        onChangeText = {passwd =>this.setState({passwd})}
+                        secureTextEntry = {true}
+                        placeholder={"Password :"}/>
                     <TextInput
                         style={styles.textForm}
-                        placeholder={"Password"}/>
+                        onChangeText = {name =>this.setState({name})}
+                        placeholder={"Name :"}/>
                     <TextInput
                         style={styles.textForm}
-                        placeholder={"Password Check"}/>
+                        onChangeText = {gender =>this.setState({gender})}
+                        placeholder={"Gender :"}/>
                     <TextInput
                         style={styles.textForm}
-                        placeholder={"Email"}/>
+                        onChangeText = {age =>this.setState({age})}
+                        placeholder={"Age :"}/>
                     <TextInput
-                        style={styles.textForm}
-                        placeholder={"Gender"}/>
+                        style={styles.TextInputStyleClass}
+                        onChangeText = {user_phone =>this.setState({user_phone})}
+                        placeholder={"Phone Number(without '-') :"}/>
                 </View>
                 <View style={styles.buttonArea}>
                     <TouchableOpacity
                         style={styles.button}
-                        onPress={this._doLogin.bind(this)}>
+                        onPress={this.UserRegistrationFunction}>
                         <Text style={styles.buttonTitle}>가입</Text>
                     </TouchableOpacity>
                 </View>
@@ -69,9 +123,27 @@ export default class RegisterScreen extends Component{
 
 
 const styles = StyleSheet.create({
+    TextInputStyleClass: {
+        textAlign: 'center',
+        marginBottom: 7,
+        height:40,
+        borderWidth: 1,
+
+        borderColor: '#2196F3',
+
+        borderRadius: 5,
+    },
+
+    MainContainer:{
+        justifyContent:'center',
+        flex:1,
+        margin:10
+    },
+    
     container: {
         flex: 1,
         backgroundColor: 'white',
+        margin:10
 
     },
     titleArea: {
@@ -111,10 +183,11 @@ const styles = StyleSheet.create({
     formArea: {
         width: '100%',
         height: hp('5%'),
-        marginBottom: 260,
+        marginBottom: 300,
     },
     button: {
         backgroundColor: "#46c3ad",
+        marginTop: 10,
         width: "100%",
         height: "100%",
         justifyContent: 'center',

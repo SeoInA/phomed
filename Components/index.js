@@ -244,6 +244,7 @@ const AppStack = createStackNavigator(
           header:null
         }
       },
+
       Login:{
         screen:LoginScreen,
         navigationOptions:{
