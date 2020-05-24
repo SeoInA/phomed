@@ -2,20 +2,34 @@ import React, {Component} from 'react';
 import {
     View,
     Text,
-    Button,
+    ScrollView,
+    TextInput,
+    TouchableOpacity,
     StyleSheet
 } from 'react-native';
+import { Button, Icon,Container,Body, Right, Left, Header } from 'native-base';
 
 export default class SomethingScreen extends Component{
 
     render(){
         return (
-            <View style={styles.container}>
-                <Text>something</Text>
-                <Button
-                    title='back'
-                    onPress={() => this.props.navigation.goBack()} />
-            </View>
+
+          <Container style={styles.container}>
+
+            <ScrollView>
+
+                <View style={styles.wrapContent}>
+                    <View style={styles.content}></View>
+                </View>
+                <View style={styles.wrapContent}>
+                    <View style={styles.content}></View>
+                </View>
+                <View style={styles.wrapContent}>
+                    <View style={styles.content}></View>
+                </View>
+
+            </ScrollView>
+          </Container>
         );
     }
 }
@@ -23,8 +37,12 @@ export default class SomethingScreen extends Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'white',
-        justifyContent: 'center',
-        alignItems: 'center',
+        backgroundColor: 'pink',
     },
+    content: {
+        width: "100%",
+        height: "100%",
+        backgroundColor: "white",
+        borderRadius:50,
+    }
 })

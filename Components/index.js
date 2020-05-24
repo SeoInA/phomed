@@ -153,14 +153,14 @@ const TabNavigator = createMaterialTopTabNavigator(
 
 const SettingStack = createStackNavigator(
     {
-        SettingScreen,
-        SomethingScreen
+        Setting:SettingScreen,
+        Something:SomethingScreen
     },
     {
         defaultNavigationOptions: ({navigation}) => ({
-            title: 'Setting',
+            title: 'Mypage',
         }),
-        initialRouteName: 'SettingScreen',
+        initialRouteName: 'Setting',
     }
 );
 
@@ -168,7 +168,7 @@ const TabNavigator = createBottomTabNavigator(
     {
         MyPage: ReviewScreen,
       //  Home : HomeScreen,
-        Setting: SettingStack,
+        Review: SettingStack,
     },
     {
         defaultNavigationOptions: ({navigation}) => ({
@@ -180,7 +180,7 @@ const TabNavigator = createBottomTabNavigator(
                     icon = "🌈";
                 }
 
-                else if(routeName === 'Setting'){
+                else if(routeName === 'Review'){
                     icon = "🌙"
                 }
 
