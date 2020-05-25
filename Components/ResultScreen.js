@@ -5,7 +5,8 @@ import {
     ScrollView,
     TextInput,
     TouchableOpacity,
-    StyleSheet
+    StyleSheet,
+    Image
 } from 'react-native';
 import { Button, Icon,Container,Body, Right, Left, Header,Footer } from 'native-base';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
@@ -18,24 +19,52 @@ export default class ResultScreen extends Component{
         return (
           <Container style={styles.container}>
 
-            <Header>
-                  <Left><TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}><Icon name='ios-home' size={30} style={{ paddingRight:10 }} /></TouchableOpacity></Left>
-                  <Body><Text>RESULT</Text></Body>
-                  <Right><TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}><Icon name='ios-key' size={30} style={{ paddingRight:10 }} /></TouchableOpacity></Right>
+            <Header style={{backgroundColor:'black'}}>
+                  <Left style={{marginLeft: 20}}><TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}><Icon name='ios-home' size={30} style={{ color:'white',paddingRight:10 }} /></TouchableOpacity></Left>
+                  <Body><Text style={{ color:'white',fontSize:15,fontWeight:'bold'}}>RESULT</Text></Body>
+                  <Right style={{marginRight: 20}}><TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}><Icon name='ios-key' size={30} style={{ color:'white',paddingRight:10 }} /></TouchableOpacity></Right>
             </Header>
             <ScrollView>
 
                 <View style={styles.wrapContent}>
-                    <View style={styles.content}></View>
+                    <View style={styles.content}>
+                      <View>
+                        <Text style={{textAlign:'center',fontWeight:'bold',fontSize:27, paddingTop:30,color:'#FF8888'}}>당신에게 추천하는{'\n'}병원입니다 </Text>
+                      </View>
+                      <View flexDirection="row">
+                        <View style={{marginLeft: 20,width:10}}>
+                          <Image resizeMode='contain' style={styles.image} source={require('./img/thumb.png')}/>
+
+                        </View>
+                        <View >
+                          <Text style={{marginTop:40,marginLeft:120,textAlign:'center',fontSize:25,color:'black'}}> 병원이름  </Text>
+                        </View>
+
+                      </View>
+
+                      <View style={{marginLeft: 20,marginTop:25}}>
+                        <Text style={{paddingBottom:4}}> 병원위치 : </Text>
+                        <Text style={{paddingBottom:4}}> 점심시간 : </Text>
+                        <Text style={{paddingBottom:4}}> 진료시간 : </Text>
+                        <Text style={{paddingBottom:4}}> 전화번호 : </Text>
+                        <Text style={{paddingBottom:4}}> 교통편 : </Text>
+                        <Text style={{paddingBottom:4}}> 버스정거장 : </Text>
+                        <Text style={{paddingBottom:4}}> 버스 번호 : </Text>
+                        <Text style={{paddingBottom:4}}> 병원 진료과목 : </Text>
+                        <Text style={{paddingBottom:4}}> 리뷰 : </Text>
+                        <Text style={{paddingBottom:4}}> 별정 : </Text>
+                        <Text style={{paddingBottom:4}}> Comment : </Text>
+                      </View>
+                    </View>
                 </View>
 
             </ScrollView>
 
             <Footer>
 
-                  <Left><TouchableOpacity ><Text> ✔️ Scrap </Text></TouchableOpacity></Left>
+                  <Left style={{marginLeft: 20}}><TouchableOpacity ><Text> ✔️ Scrap </Text></TouchableOpacity></Left>
                   <Body><TouchableOpacity onPress={() => this.props.navigation.navigate('Write')}><Text> 📝 Write Review </Text></TouchableOpacity></Body>
-                  <Right><TouchableOpacity onPress={() => this.props.navigation.goBack()}><Text> 🔙 Back </Text></TouchableOpacity></Right>
+                  <Right style={{marginRight: 20}}><TouchableOpacity onPress={() => this.props.navigation.goBack()}><Text> 🔙 Back </Text></TouchableOpacity></Right>
             </Footer>
           </Container>
         );
@@ -45,19 +74,20 @@ export default class ResultScreen extends Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: wp('5%'),
-        backgroundColor: 'white',
+        backgroundColor: 'pink',
     },
     wrapContent: {
-        width: wp('90%'),
-        height: wp('90%'),
+        paddingTop:30,
+        width: wp('100%'),
+        height: wp('100%'),
         paddingBottom: wp('5%'),
-
+        padding:20,
     },
     content: {
         width: "100%",
-        height: "100%",
-        backgroundColor: "#46c3ad",
+        height: "145%",
+        backgroundColor: "white",
+        borderRadius:50,
     },
     buttonArea: {
         width: '100%',
@@ -70,5 +100,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderBottomWidth: 0.5,
         borderColor: '#ccc',
+    },
+    image:{
+
+      width:60 ,
+      height:90,
+      marginLeft:15
     }
 })

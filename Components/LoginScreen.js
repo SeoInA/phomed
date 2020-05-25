@@ -100,8 +100,8 @@ export default class LoginScreen extends Component{
         return (
           <Container style={styles.container}>
             <Header style={styles.header}>
-                <Left><TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}><Icon name='ios-home' size={30} style={{ paddingRight:10 }} /></TouchableOpacity></Left>
-                <Body><Text>LogIn</Text></Body>
+                <Left><TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}><Icon name='ios-home' size={30} style={{ color:'white',paddingRight:10 }} /></TouchableOpacity></Left>
+                <Body><Text style={{ color:'white',fontSize:15,fontWeight:'bold'}}>LogIn</Text></Body>
                 <Right></Right>
             </Header>
             <View style={styles.Form}>
@@ -143,7 +143,7 @@ export default class LoginScreen extends Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: '#FF8888',
 
     },
     titleArea: {
@@ -164,6 +164,8 @@ const styles = StyleSheet.create({
       paddingRight: wp('10%'),
     },
     header :{
+      backgroundColor:'black',
+
       paddingLeft: wp('10%'),
       paddingRight: wp('10%'),
     },
@@ -175,6 +177,7 @@ const styles = StyleSheet.create({
         paddingLeft: 5,
         paddingRight: 5,
         marginBottom: 20,
+        backgroundColor: 'white',
     },
     buttonArea: {
         width: '100%',
@@ -187,13 +190,13 @@ const styles = StyleSheet.create({
         marginBottom: 100,
     },
     button: {
-        backgroundColor: "#46c3ad",
+        backgroundColor: "#FFE3E3",
         width: "100%",
         height: "100%",
         justifyContent: 'center',
         alignItems: 'center',
     },
     buttonTitle: {
-        color: 'white',
+        color: 'black',
     },
 })

@@ -6,7 +6,8 @@ import {
     TextInput,
     TouchableOpacity,
     StyleSheet,
-    SafeAreaView
+    SafeAreaView,
+    Image
 } from 'react-native';
 import { Button, Icon,Container,Body, Right, Left, Header } from 'native-base';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
@@ -20,15 +21,19 @@ export default class HomeScreen extends Component{
         return (
           <Container style={styles.container}>
 
-            <Header>
-                  <Left><Icon name='ios-home' style={{ paddingLeft:10 }}/></Left>
-                  <Body><Text>Home</Text></Body>
-                  <Right><TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}><Icon name='ios-key' size={30} style={{ paddingRight:10 }} /></TouchableOpacity></Right>
+            <Header style={{backgroundColor:'black'}}>
+                  <Left style={{marginLeft: 20}}><Icon name='ios-home' style={{ color:'white',paddingLeft:10 }}/></Left>
+                  <Body><Text style={{color:'white', fontWeight:'bold',fontSize:15}}>Home</Text></Body>
+                  <Right style={{marginRight: 20}}><TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}><Icon name='ios-key' size={30} style={{ color:'white',paddingRight:10 }} /></TouchableOpacity></Right>
             </Header>
             <ScrollView>
 
               <SafeAreaView style={styles.safeAreaView}>
                 <View style={styles.container}>
+                  <View style={{marginTop: 40}}>
+                    <Text style={styles.head_text}>당신이 찾고 있는 장소는</Text>
+                    <Text style={styles.head_text}>병원인가요? 약국인가요?</Text>
+                  </View>
                   <View flexDirection="row">
                     <CardView
                       cardElevation={2}
@@ -36,6 +41,7 @@ export default class HomeScreen extends Component{
                       cornerRadius={5}
                       style={styles.card}
                     >
+                      <TouchableOpacity onPress={() => this.props.navigation.navigate('Select')}><Image resizeMode='contain' style={{ paddingRight:10, width:120 , height:200 }} source={require('./img/01.jpg')}/></TouchableOpacity>
                       <Text style={styles.text}>병원</Text>
                     </CardView>
                     <CardView
@@ -44,19 +50,13 @@ export default class HomeScreen extends Component{
                       cornerRadius={5}
                       style={styles.card}
                     >
+                      <TouchableOpacity onPress={() => this.props.navigation.navigate('Select')}><Image resizeMode='contain' style={{ paddingRight:10, width:130 , height:200 }} source={require('./img/02.jpg')}/></TouchableOpacity>
                       <Text style={styles.text}>약국</Text>
                     </CardView>
                   </View>
 
                 </View>
               </SafeAreaView>
-
-                <Body>
-                  <TouchableOpacity
-                      onPress={() => this.props.navigation.navigate('Select')}>
-                      <Text>Next</Text>
-                  </TouchableOpacity>
-                </Body>
             </ScrollView>
           </Container>
         );
@@ -66,19 +66,7 @@ export default class HomeScreen extends Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: wp('5%'),
-        backgroundColor: 'white',
-    },
-    wrapContent: {
-        width: wp('90%'),
-        height: wp('90%'),
-        paddingBottom: wp('5%'),
-
-    },
-    content: {
-        width: "100%",
-        height: "100%",
-        backgroundColor: "#46c3ad",
+        backgroundColor: '#FF8888',
     },
     buttonArea: {
         width: '100%',
@@ -101,13 +89,17 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignSelf: 'center',
       flex: 1,
-      marginTop:60,
-      margin: 10
+      margin: 10,
+      marginTop:50
+    },
+    head_text :{
+      textAlign:'center',
+      fontWeight:'bold',
+      fontSize:30,
     },
     text: {
       textAlign: 'center',
       margin: 10,
-      height: 300
     },
     instructions: {
       textAlign: 'center',

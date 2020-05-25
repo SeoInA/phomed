@@ -115,9 +115,9 @@ export default class RegisterScreen extends Component{
         return (
           <Container style={styles.container}>
             <Header style={styles.header}>
-                <Left><TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}><Icon name='ios-home' size={30} style={{ paddingRight:10 }} /></TouchableOpacity></Left>
-                <Body><Text>Register</Text></Body>
-                <Right><TouchableOpacity onPress={() => this.props.navigation.goBack()}><Text> 🔙 Back </Text></TouchableOpacity></Right>
+                <Left><TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}><Icon name='ios-home' size={30} style={{ color:'white',paddingRight:10 }} /></TouchableOpacity></Left>
+                <Body><Text style={{ color:'white',fontSize:15,fontWeight:'bold'}}>Register</Text></Body>
+                <Right><TouchableOpacity onPress={() => this.props.navigation.goBack()}><Text style={{ color:'white'}}> 🔙 Back </Text></TouchableOpacity></Right>
             </Header>
             <View style={styles.Form}>
                 <View style={styles.titleArea}>
@@ -184,8 +184,12 @@ const styles = StyleSheet.create({
     
     container: {
         flex: 1,
+<<<<<<< HEAD
         backgroundColor: 'white',
         margin:10
+=======
+       
+>>>>>>> master
 
     },
     titleArea: {
@@ -199,14 +203,17 @@ const styles = StyleSheet.create({
     formArea: {
         width: '100%',
         paddingBottom: wp('10%'),
+
     },
     Form :{
       paddingLeft: wp('10%'),
       paddingRight: wp('10%'),
+
     },
     header :{
       paddingLeft: wp('10%'),
       paddingRight: wp('7%'),
+      backgroundColor:'black',
     },
     textForm: {
         borderWidth: 0.5,
@@ -216,6 +223,8 @@ const styles = StyleSheet.create({
         paddingLeft: 5,
         paddingRight: 5,
         marginBottom: 12,
+
+        backgroundColor: 'white',
     },
     buttonArea: {
         width: '100%',
@@ -228,14 +237,18 @@ const styles = StyleSheet.create({
         marginBottom: 300,
     },
     button: {
+<<<<<<< HEAD
         backgroundColor: "#46c3ad",
         marginTop: 10,
+=======
+        
+>>>>>>> master
         width: "100%",
         height: "100%",
         justifyContent: 'center',
         alignItems: 'center',
     },
     buttonTitle: {
-        color: 'white',
+        color: 'black',
     },
 })

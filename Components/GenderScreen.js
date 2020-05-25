@@ -6,7 +6,8 @@ import {
     TextInput,
     TouchableOpacity,
     StyleSheet,
-    SafeAreaView
+    SafeAreaView,
+    Image
 } from 'react-native';
 import { Button, Icon,Container,Body, Right, Left, Header,Footer } from 'native-base';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
@@ -20,9 +21,9 @@ export default class GenderScreen extends Component{
         return (
           <Container style={styles.container}>
 
-            <Header>
-                  <Left><Icon name='ios-location' size={30} style={{ paddingRight:10 }} /></Left>
-                  <Text>당신의 성별을 알려주세요</Text>
+            <Header style={{ height:90 , backgroundColor: 'black'}}>
+                  <Left><Image resizeMode='contain' style={styles.image} source={require('./img/gender2.jpg')}/></Left>
+                  <Body><Text  style={{ textAlign: 'center',color:'white', fontWeight:'bold',fontSize:17}}>당신의 성별을 알려주세요</Text></Body>
 
             </Header>
             <SafeAreaView style={styles.safeAreaView}>
@@ -34,7 +35,8 @@ export default class GenderScreen extends Component{
                     cornerRadius={5}
                     style={styles.card}
                   >
-                    <Text style={styles.text}>여성</Text>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Select')}><Image resizeMode='contain' style={{ paddingRight:10, width:150 , height:200 }} source={require('./img/man.jpg')}/></TouchableOpacity>
+                    <Text style={styles.text}>남성</Text>
                   </CardView>
                   <CardView
                     cardElevation={1}
@@ -42,18 +44,16 @@ export default class GenderScreen extends Component{
                     cornerRadius={5}
                     style={styles.card}
                   >
-                    <Text style={styles.text}>남성</Text>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Select')}><Image resizeMode='contain' style={{ paddingRight:10, width:140 , height:200 }} source={require('./img/woman.jpg')}/></TouchableOpacity>
+                    <Text style={styles.text}>여성</Text>
                   </CardView>
                 </View>
 
               </View>
             </SafeAreaView>
-
-
-            <Footer>
-                  <Left><TouchableOpacity onPress={() => this.props.navigation.goBack()}><Text> 🔙 Back </Text></TouchableOpacity></Left>
-
-                  <Right><TouchableOpacity onPress={() => this.props.navigation.navigate('Select')}><Text> ➕ Next </Text></TouchableOpacity></Right>
+            <Footer style={{ backgroundColor: '#FFD8D8'}}>
+              <Left style={{ marginLeft:50}}><TouchableOpacity onPress={() => this.props.navigation.goBack()}><Text > 🔙 Back </Text></TouchableOpacity></Left>
+              <Right style={{ marginRight:50}}><TouchableOpacity  onPress={() => this.props.navigation.navigate('Select')}><Text> ➕ Next </Text></TouchableOpacity></Right>
             </Footer>
           </Container>
         );
@@ -63,52 +63,34 @@ export default class GenderScreen extends Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: wp('5%'),
-        backgroundColor: 'white',
-    },
-    wrapContent: {
-        width: wp('90%'),
-        height: wp('90%'),
-        paddingBottom: wp('5%'),
-
-    },
-    content: {
-        width: "100%",
-        height: "100%",
-        backgroundColor: "#46c3ad",
-    },
-    buttonArea: {
-        width: '100%',
-        height: hp('5%'),
-    },
-    wrapButton: {
-        width: wp('100%'),
-        height: hp('8%'),
-        paddingLeft: wp('8%'),
-        justifyContent: 'center',
-        borderBottomWidth: 0.5,
-        borderColor: '#ccc',
+        backgroundColor: 'pink',
     },
     safeAreaView: {
-    flex: 1
+      flex: 1
     },
     card: {
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
-    alignSelf: 'center',
-    flex: 1,
-    marginTop:60,
-    margin: 10
+      backgroundColor: 'white',
+      alignItems: 'center',
+      justifyContent: 'center',
+      alignSelf: 'center',
+      flex: 1,
+      margin: 10,
+      marginTop:110
     },
     text: {
       textAlign: 'center',
-      margin: 10,
-      height: 300
+      margin:40
     },
     instructions: {
       textAlign: 'center',
       color: '#333333',
       marginBottom: 5
+    },
+    image:{
+      borderRadius:20 ,
+      width:130 ,
+      height:150,
+      flex: 1,
+      marginLeft:10
     }
 })

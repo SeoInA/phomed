@@ -16,9 +16,9 @@ export default class ReviewScreen extends Component{
         return (
           <Container style={styles.container}>
 
-            <Header>
-                  <Left><TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}><Icon name='ios-home' size={30} style={{ paddingRight:10 }} /></TouchableOpacity></Left>
-                  <Body><Text>MyPage</Text></Body>
+            <Header style={{backgroundColor:'black'}}>
+                  <Left style={{marginLeft: 20}}><TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}><Icon name='ios-home' size={30} style={{color:'white', paddingRight:40 }} /></TouchableOpacity></Left>
+                  <Body><Text style={{color:'white', fontWeight:'bold',fontSize:15}}>MyPage</Text></Body>
                   <Right></Right>
             </Header>
             <ScrollView>
@@ -42,18 +42,18 @@ export default class ReviewScreen extends Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: wp('5%'),
-        backgroundColor: 'white',
+        backgroundColor: 'pink',
     },
     wrapContent: {
-        width: wp('90%'),
+        width: wp('100%'),
         height: wp('90%'),
-        paddingBottom: wp('5%'),
+        padding: wp('5%'),
 
     },
     content: {
         width: "100%",
         height: "100%",
-        backgroundColor: "#46c3ad",
+        backgroundColor: "white",
+        borderRadius:50,
     }
 })

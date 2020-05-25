@@ -11,9 +11,6 @@ import { StackActions, NavigationActions } from 'react-navigation';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 export default class SettingScreen extends Component{
-    _navigate(){
-        this.props.navigation.navigate('SomethingScreen');
-    }
 
     _checkLogout(){
         Alert.alert(
@@ -31,7 +28,7 @@ export default class SettingScreen extends Component{
         const resetAction = StackActions.reset({
             index: 0,
             key: null,
-            actions: [NavigationActions.navigate({ routeName: 'LoginScreen' })],
+            actions: [NavigationActions.navigate({ routeName: 'Login' })],
         });
         this.props.navigation.dispatch(resetAction);
     }
@@ -43,7 +40,7 @@ export default class SettingScreen extends Component{
             <View style>
                 <TouchableOpacity
                     style={styles.wrapButton}
-                    onPress={this._navigate.bind(this)}>
+                    onPress={() => this.props.navigation.navigate('Something')}>
                     <Text>🏅 Review</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
