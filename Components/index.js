@@ -269,12 +269,14 @@ const AppStack = createStackNavigator(
           header:null
         }
       },
+      /*
       LocationResult:{
         screen : LocationResultScreen,
         navigationOptions:{
             header:null
         }
       },
+      */
       Time:{
         screen : TimeScreen,
         navigationOptions:{

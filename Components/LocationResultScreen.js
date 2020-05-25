@@ -1,3 +1,4 @@
+/*
 import React, {Component, useState, useEffect} from 'react';
 //import Styled from 'styled-components/native';
 import {StyleSheet, Text, View,Button} from 'react-native';
@@ -84,3 +85,4 @@ const styles = StyleSheet.create({
       bottom: 0
     }
   });
+  */
