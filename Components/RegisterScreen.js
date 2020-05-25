@@ -184,13 +184,8 @@ const styles = StyleSheet.create({
     
     container: {
         flex: 1,
-<<<<<<< HEAD
         backgroundColor: 'white',
-        margin:10
-=======
-       
->>>>>>> master
-
+        margin:1
     },
     titleArea: {
         width: '100%',
@@ -237,12 +232,8 @@ const styles = StyleSheet.create({
         marginBottom: 300,
     },
     button: {
-<<<<<<< HEAD
         backgroundColor: "#46c3ad",
         marginTop: 10,
-=======
-        
->>>>>>> master
         width: "100%",
         height: "100%",
         justifyContent: 'center',
