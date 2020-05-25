@@ -20,7 +20,7 @@ import LocationScreen from './LocationScreen.js';
 import TimeScreen from './TimeScreen.js';
 import MajorScreen from './MajorScreen.js';
 import GenderScreen from './GenderScreen.js';
-
+import LocationResultScreen from './LocationResultScreen.js';
 
 /*
 const ReviewStack = createStackNavigator(
@@ -267,6 +267,12 @@ const AppStack = createStackNavigator(
         screen : LocationScreen,
         navigationOptions:{
           header:null
+        }
+      },
+      LocationResult:{
+        screen : LocationResultScreen,
+        navigationOptions:{
+            header:null
         }
       },
       Time:{

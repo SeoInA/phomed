@@ -33,6 +33,7 @@ export default class LocationScreen extends Component{
                     cardMaxElevation={2}
                     cornerRadius={5}
                     style={styles.card}
+                    onPress = {() => this.props.navigation.navigate('LocationResult')}
                   >
                     <Text style={styles.text}>죽도동</Text>
                   </CardView>
