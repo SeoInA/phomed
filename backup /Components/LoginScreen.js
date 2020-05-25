@@ -5,8 +5,7 @@ import {
     Text,
     TextInput,
     TouchableOpacity,
-    StyleSheet,
-    Alert
+    StyleSheet
 } from 'react-native';
 import { Button, Icon,Container,Body, Right, Left, Header } from 'native-base';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
@@ -24,28 +23,22 @@ export default class LoginScreen extends Component{
         this.props.navigation.replace('TabNavigator')
     }
     */
-    constructor(props){
-        super(props)
 
-        this.state = {
-            userID: '',
-            passwd: '',
-            responseMSG: ''
-        }
-    }   
-    
+    /*
     _doRegist(){
         // do something
         this.props.navigation.replace('Register')
     }
-    
-    
+    */
+
+    /*
     UserLoginFunction = () =>{
 
         const userID = this.state.userID;
         const{passwd} = this.state;
+        
 
-        fetch('http://seongmindbphp.000webhostapp.com/login/login.php',{
+        fetch('http://seongmindbphp.000webhostapp.com',{
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -57,45 +50,19 @@ export default class LoginScreen extends Component{
             })
         }).then((response)=> response.json())
                 .then((responseJson)=>{
-                    //responseMSG = responseJson;
-                    //responseMSG = responseMSG.replace('"','');
-                    //responseMSG = responseMSG.replace('"','');
-                    //responseMSG = responseMSG.trim();
-                    //data_retrieve(responseJson);
-                    this.setState({responseMSG: JSON.stringify(responseJson)},function(){
-                        const responseMSG = this.state.responseMSG;
-                        console.log(responseMSG);              
-                        if(responseMSG.includes('Successful')){
-                            this.props.navigation.navigate('TabNavigator');
-                        }
-                        else{
-                            this.props.navigation.navigate('Login');
-                        }
-                       });
+                    
                     Alert.alert(responseJson);
                 }).catch((error) =>{
                     console.error(error);
                 });
-        /*
-        function data_retrieve(data){
-            //this.state.responseMSG = JSON.stringify(data);
-            this.setState({responseMSG: JSON.stringify(data)})
-        }
-        */
         
-        /*
-        const responseMSG = this.state.responseMSG;
-
-        var UserExistMSG = "L";
-        console.log(responseMSG);
-        if(responseMSG.length){
+        var UserExistMSG = 'Login successful';
+        if(response.equals(UserExistMSG)){
             this.props.navigation.navigate('TabNavigator');
         }
-        */
-
                 
     }
-
+    */
     render(){
         return (
           <Container style={styles.container}>
@@ -116,20 +83,19 @@ export default class LoginScreen extends Component{
                     <TextInput
                         style={styles.textForm}
                         placeholder={"Password"}
-                        secureTextEntry = {true}
                         onChangeText = {passwd =>this.setState({passwd})}/>
                 </View>
                 <View style={styles.buttonArea}>
                     <TouchableOpacity
                         style={styles.button}
-                        onPress={this.UserLoginFunction.bind(this)}>
+                        onPress={this.UserLoginFunction}>
                         <Text style={styles.buttonTitle}>Login</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.buttonArea}>
                     <TouchableOpacity
                         style={styles.button}
-                        onPress={this._doRegist.bind(this)}>
+                        onPress={this.props.navigation.replace('Register')}>
                         <Text style={styles.buttonTitle}>회원가입</Text>
                     </TouchableOpacity>
                 </View>

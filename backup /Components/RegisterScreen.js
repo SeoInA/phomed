@@ -33,12 +33,10 @@ export default class RegisterScreen extends Component{
             name: '',
             gender: '',
             age: '',
-            user_phone: '',
-            responseMSG: ''
+            user_phone: ''
         }
     }
-    
-    
+
     UserRegistrationFunction = () =>{
 
         const userID = this.state.userID;
@@ -48,9 +46,9 @@ export default class RegisterScreen extends Component{
         const{age} = this.state;
         const{user_phone} = this.state;
 
-    
+        var responseMSG = '';
         
-        fetch('http://seongmindbphp.000webhostapp.com/register/register.php',{
+        fetch('http://seongmindbphp.000webhostapp.com',{
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -66,50 +64,25 @@ export default class RegisterScreen extends Component{
             })
         }).then((response)=> response.json())
                 .then((responseJson)=>{
-                    /*responseMSG = JSON.stringify(responseJson);
+                    responseMSG = JSON.stringify(responseJson);
                     responseMSG = responseMSG.replace('"','');
                     responseMSG = responseMSG.replace('"','');
                     responseMSG = responseMSG.trim();
-                    */
-                   this.setState({responseMSG: JSON.stringify(responseJson)},function(){
-                    const responseMSG = this.state.responseMSG;
-                    console.log(responseMSG);              
-                    if(responseMSG.includes('Successful')){
-                        this.props.navigation.navigate('Home');
-                    }
-                    else{
-                        this.props.navigation.navigate('Register');
-                    }
-                   });
-                    Alert.alert(responseJson);
+                    Alert.alert(responseMSG);
                 }).catch((error) =>{
                     console.error(error);
                 });
         
-        //this.enter_home();
-        /*const responseMSG = this.state.responseMSG;
-        console.log(responseMSG);              
-        if(responseMSG.includes('Successful')){
+        var RegistrationMSG = 'Registration was Successful.';
+                              
+        if(!RegistrationMSG.match(responseMSG)){
             this.props.navigation.navigate('Home');
         }
         else{
-            this.props.navigation.navigate('Register');
-        }*/
+            this.props.navigation.navigate('Login');
+        }
                 
     }
-    
-    /*
-    enter_home(){
-        const responseMSG = this.state.responseMSG;
-        console.log(responseMSG);              
-        if(responseMSG.includes('Successful')){
-            this.props.navigation.navigate('Home');
-        }
-        else{
-            this.props.navigation.navigate('Register');
-        }
-    }
-    */
 
     render(){
         return (
