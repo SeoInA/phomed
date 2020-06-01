@@ -28,104 +28,108 @@ export default class LocationScreen extends Component{
             </Header>
 
             <SafeAreaView style={styles.safeAreaView}>
-              <View style={styles.container}>
+              <View style={styles.Cardcontainer}>
 
                 <View flexDirection="row">
-
-                  <CardView
-                    cardElevation={2}
-                    cardMaxElevation={2}
-                    cornerRadius={15}
-                    style={styles.card}
-                    onPress = {() => this.props.navigation.navigate('LocationResult')}
-                  >
-                  <TouchableOpacity>
-                    <Text style={styles.text}>죽도동</Text>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('LocationQuery',{city: '죽도동'})}>
+                    
+                    <CardView
+                      cardElevation={2}
+                      cardMaxElevation={2}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                      <Text style={styles.text}>죽도동</Text>
+                    </CardView>
                   </TouchableOpacity>
-                  </CardView>
-
-
-                  <CardView
-                    cardElevation={1}
-                    cardMaxElevation={1}
-                    cornerRadius={15}
-                    style={styles.card}
-                  >
-                    <TouchableOpacity>
-                    <Text style={styles.text}>두호동</Text>
-                    </TouchableOpacity>
-                  </CardView>
-
+                
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('LocationQuery',{city: '두호동'})}>
+                    
+                    <CardView
+                      cardElevation={1}
+                      cardMaxElevation={1}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                      <Text style={styles.text}>두호동</Text>
+                    </CardView>
+                  </TouchableOpacity>
                 </View>
+
                 <View flexDirection="row">
-
-                  <CardView
-                    cardElevation={2}
-                    cardMaxElevation={2}
-                    cornerRadius={15}
-                    style={styles.card}
-                  >
-                  <TouchableOpacity>
-                    <Text style={styles.text}>흥해읍</Text>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('LocationQuery',{city: '흥해읍'})}>
+                    <CardView
+                      cardElevation={2}
+                      cardMaxElevation={2}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                      <Text style={styles.text}>흥해읍</Text>
+                    </CardView>
                   </TouchableOpacity>
-                  </CardView>
 
-                  <CardView
-                    cardElevation={3}
-                    cardMaxElevation={3}
-                    cornerRadius={15}
-                    style={styles.card}
-                  >
-                  <TouchableOpacity>
-                    <Text style={styles.text}>창포동</Text>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('LocationQuery',{city: '창포동'})}>
+                    <CardView
+                      cardElevation={3}
+                      cardMaxElevation={3}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >                   
+                      <Text style={styles.text}>창포동</Text>
+                    </CardView>
                   </TouchableOpacity>
-                  </CardView>
                 </View>
+
                 <View flexDirection="row">
-                  <CardView
-                    cardElevation={4}
-                    cardMaxElevation={4}
-                    cornerRadius={15}
-                    style={styles.card}
-                  >
-                  <TouchableOpacity>
-                    <Text style={styles.text}>장성동</Text>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('LocationQuery',{city: '장성동'})}>
+                    <CardView
+                      cardElevation={4}
+                      cardMaxElevation={4}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                      <Text style={styles.text}>장성동</Text>               
+                    </CardView>
                   </TouchableOpacity>
-                  </CardView>
-                  <CardView
-                    cardElevation={5}
-                    cardMaxElevation={5}
-                    cornerRadius={15}
-                    style={styles.card}
-                  >
-                  <TouchableOpacity>
-                    <Text style={styles.text}>양덕동</Text>
-                  </TouchableOpacity>
-                  </CardView>
-                </View>
-                <View flexDirection="row">
-                  <CardView
-                    cardElevation={6}
-                    cardMaxElevation={6}
-                    cornerRadius={15}
-                    style={styles.card}
-                  >
-                  <TouchableOpacity>
-                    <Text style={styles.text}>기계면</Text>
-                  </TouchableOpacity>
-                  </CardView>
 
-                  <CardView
-                    cardElevation={7}
-                    cardMaxElevation={7}
-                    cornerRadius={15}
-                    style={styles.card}
-                  >
-                  <TouchableOpacity>
-                    <Text style={styles.text}>청하면</Text>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('LocationQuery',{city: '양덕동'})}>
+                    <CardView
+                      cardElevation={5}
+                      cardMaxElevation={5}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >  
+                      <Text style={styles.text}>양덕동</Text>                 
+                    </CardView>
                   </TouchableOpacity>
-                  </CardView>
+
                 </View>
+
+                <View flexDirection="row">
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('LocationQuery',{city: '기계면'})}>
+                    <CardView
+                      cardElevation={6}
+                      cardMaxElevation={6}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                      <Text style={styles.text}>기계면</Text>              
+                    </CardView>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('LocationQuery',{city: '청하면'})}>
+                    <CardView
+                      cardElevation={7}
+                      cardMaxElevation={7}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >         
+                      <Text style={styles.text}>청하면</Text>          
+                    </CardView>
+                  </TouchableOpacity>
+                  
+                </View>
+                
               </View>
             </SafeAreaView>
 
@@ -133,7 +137,7 @@ export default class LocationScreen extends Component{
             <Footer style={{ backgroundColor: '#FFD8D8'}}>
                   <Left style={{ marginLeft:50}}><TouchableOpacity onPress={() => this.props.navigation.goBack()}><Text > 🔙 Back </Text></TouchableOpacity></Left>
 
-                  <Right style={{ marginRight:50}}><TouchableOpacity  onPress={() => this.props.navigation.navigate('Select')}><Text> ➕ Next </Text></TouchableOpacity></Right>
+                  <Right style={{ marginRight:50}}><TouchableOpacity  onPress={() => this.props.navigation.navigate('Map')}><Text> ➕ Next </Text></TouchableOpacity></Right>
             </Footer>
           </Container>
         );
@@ -145,6 +149,12 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: 'pink',
     },
+    Cardcontainer:{
+        backgroundColor: 'pink',
+        alignContent: 'center',
+        alignItems: 'center'
+    },
+
     safeAreaView: {
       marginTop:16,
       flex: 1
@@ -154,7 +164,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'center',
-    flex: 1,
+    flex: 0,
     margin: 10
     },
     text: {
