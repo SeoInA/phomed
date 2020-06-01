@@ -12,6 +12,9 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 
 export default class ReviewScreen extends Component{
+
+  
+
     render(){
         return (
           <Container style={styles.container}>

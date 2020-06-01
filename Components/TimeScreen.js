@@ -26,108 +26,155 @@ export default class TimeScreen extends Component{
                   <Body><Text  style={{ textAlign: 'center',color:'white', fontWeight:'bold',fontSize:17}}>당신이 원하는 시간대를   알려주세요</Text></Body>
 
             </Header>
+            <ScrollView>
+              <SafeAreaView style={styles.safeAreaView}>
+                <View style={styles.container}>
 
-            <SafeAreaView style={styles.safeAreaView}>
-              <View style={styles.container}>
+                  <View flexDirection="row">
 
-                <View flexDirection="row">
-
-                  <CardView
-                    cardElevation={2}
-                    cardMaxElevation={2}
-                    cornerRadius={15}
-                    style={styles.card}
-                  >
-                  <TouchableOpacity>
-                    <Text style={styles.text}>09:00-10:00</Text>
-                  </TouchableOpacity>
-                  </CardView>
-
-
-                  <CardView
-                    cardElevation={1}
-                    cardMaxElevation={1}
-                    cornerRadius={15}
-                    style={styles.card}
-                  >
+                    <CardView
+                      cardElevation={2}
+                      cardMaxElevation={2}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
                     <TouchableOpacity>
-                    <Text style={styles.text}>10:00-11:00</Text>
+                      <Text style={styles.text}>09:00-10:00</Text>
                     </TouchableOpacity>
-                  </CardView>
+                    </CardView>
+
+
+                    <CardView
+                      cardElevation={1}
+                      cardMaxElevation={1}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                      <TouchableOpacity>
+                      <Text style={styles.text}>10:00-11:00</Text>
+                      </TouchableOpacity>
+                    </CardView>
+
+                  </View>
+                  <View flexDirection="row">
+
+                    <CardView
+                      cardElevation={2}
+                      cardMaxElevation={2}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                    <TouchableOpacity>
+                      <Text style={styles.text}>11:00-12:00</Text>
+                    </TouchableOpacity>
+                    </CardView>
+
+                    <CardView
+                      cardElevation={3}
+                      cardMaxElevation={3}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                    <TouchableOpacity>
+                      <Text style={styles.text}>12:00-13:00</Text>
+                    </TouchableOpacity>
+                    </CardView>
+                  </View>
+                  <View flexDirection="row">
+                    <CardView
+                      cardElevation={4}
+                      cardMaxElevation={4}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                    <TouchableOpacity>
+                      <Text style={styles.text}>13:00-14:00</Text>
+                    </TouchableOpacity>
+                    </CardView>
+                    <CardView
+                      cardElevation={5}
+                      cardMaxElevation={5}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                    <TouchableOpacity>
+                      <Text style={styles.text}>14:00-15:00</Text>
+                    </TouchableOpacity>
+                    </CardView>
+                  </View>
+                  <View flexDirection="row">
+                    <CardView
+                      cardElevation={6}
+                      cardMaxElevation={6}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                    <TouchableOpacity>
+                      <Text style={styles.text}>15:00-16:00</Text>
+                    </TouchableOpacity>
+                    </CardView>
+
+                    <CardView
+                      cardElevation={7}
+                      cardMaxElevation={7}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                    <TouchableOpacity>
+                      <Text style={styles.text}>16:00 - 17:00</Text>
+                    </TouchableOpacity>
+                    </CardView>
+                  </View>
+                  <View flexDirection="row">
+                    <CardView
+                      cardElevation={8}
+                      cardMaxElevation={8}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                    <TouchableOpacity>
+                      <Text style={styles.text}>17:00 - 18:00</Text>
+                    </TouchableOpacity>
+                    </CardView>
+
+                    <CardView
+                      cardElevation={9}
+                      cardMaxElevation={9}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                    <TouchableOpacity>
+                      <Text style={styles.text}>18:00 - 19:00</Text>
+                    </TouchableOpacity>
+                    </CardView>
+                  </View>
+                  <View flexDirection="row">
+                    <CardView
+                      cardElevation={10}
+                      cardMaxElevation={10}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                    <TouchableOpacity>
+                      <Text style={styles.text}>19:00 - 20:00</Text>
+                    </TouchableOpacity>
+                    </CardView>
+
+                    <CardView
+                      cardElevation={11}
+                      cardMaxElevation={11}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                    <TouchableOpacity>
+                      <Text style={styles.text}>20:00 - 21:00</Text>
+                    </TouchableOpacity>
+                    </CardView>
+                  </View>
 
                 </View>
-                <View flexDirection="row">
-
-                  <CardView
-                    cardElevation={2}
-                    cardMaxElevation={2}
-                    cornerRadius={15}
-                    style={styles.card}
-                  >
-                  <TouchableOpacity>
-                    <Text style={styles.text}>11:00-12:00</Text>
-                  </TouchableOpacity>
-                  </CardView>
-
-                  <CardView
-                    cardElevation={3}
-                    cardMaxElevation={3}
-                    cornerRadius={15}
-                    style={styles.card}
-                  >
-                  <TouchableOpacity>
-                    <Text style={styles.text}>12:00-13:00</Text>
-                  </TouchableOpacity>
-                  </CardView>
-                </View>
-                <View flexDirection="row">
-                  <CardView
-                    cardElevation={4}
-                    cardMaxElevation={4}
-                    cornerRadius={15}
-                    style={styles.card}
-                  >
-                  <TouchableOpacity>
-                    <Text style={styles.text}>13:00-14:00</Text>
-                  </TouchableOpacity>
-                  </CardView>
-                  <CardView
-                    cardElevation={5}
-                    cardMaxElevation={5}
-                    cornerRadius={15}
-                    style={styles.card}
-                  >
-                  <TouchableOpacity>
-                    <Text style={styles.text}>14:00-15:00</Text>
-                  </TouchableOpacity>
-                  </CardView>
-                </View>
-                <View flexDirection="row">
-                  <CardView
-                    cardElevation={6}
-                    cardMaxElevation={6}
-                    cornerRadius={15}
-                    style={styles.card}
-                  >
-                  <TouchableOpacity>
-                    <Text style={styles.text}>15:00-16:00</Text>
-                  </TouchableOpacity>
-                  </CardView>
-
-                  <CardView
-                    cardElevation={7}
-                    cardMaxElevation={7}
-                    cornerRadius={15}
-                    style={styles.card}
-                  >
-                  <TouchableOpacity>
-                    <Text style={styles.text}>16:00 - 17:00</Text>
-                  </TouchableOpacity>
-                  </CardView>
-                </View>
-              </View>
-            </SafeAreaView>
-
+              </SafeAreaView>
+            </ScrollView>
 
             <Footer style={{ backgroundColor: '#FFD8D8'}}>
                   <Left style={{ marginLeft:50}}><TouchableOpacity onPress={() => this.props.navigation.goBack()}><Text > 🔙 Back </Text></TouchableOpacity></Left>

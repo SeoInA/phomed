@@ -14,6 +14,19 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 
 export default class WriteScreen extends Component{
 
+  state={
+    color: '#ccc',
+    pressed: false,
+  };
+
+  pressHeart(){
+    if(!this.state.pressed){
+      this.setState({ pressed: true,color: 'yellow'});
+    } else {
+      this.setState({ pressed: false,color: '#ccc' });
+    }
+  }
+
 
     render(){
 
@@ -37,11 +50,11 @@ export default class WriteScreen extends Component{
                           <Text style={{marginTop:30,textAlign:'center',fontSize:25,color:'black'}}> 병원이름  </Text>
                         </View>
                         <View flexDirection="row" style={{marginLeft:83,marginTop:10}}>
-                          <TouchableOpacity onPress={() => {this.color='yellow'}}><Icon name='ios-star' size={10} style={{ color:'#ccc',paddingRight:10 }} /></TouchableOpacity>
-                          <TouchableOpacity onPress={() => {this.color='yellow'}}><Icon name='ios-star' size={10} style={{ color:'#ccc',paddingRight:10 }} /></TouchableOpacity>
-                          <TouchableOpacity onPress={() => {this.color='yellow'}}><Icon name='ios-star' size={10} style={{ color:'#ccc',paddingRight:10 }} /></TouchableOpacity>
-                          <TouchableOpacity onPress={() => {this.color='yellow'}}><Icon name='ios-star' size={10} style={{ color:'#ccc',paddingRight:10 }} /></TouchableOpacity>
-                          <TouchableOpacity onPress={() => {this.color='yellow'}}><Icon name='ios-star' size={10} style={{ color:'#ccc',paddingRight:10 }} /></TouchableOpacity>
+                          <TouchableOpacity onPress={() => this.pressHeart()}><Icon name='ios-star' size={10} style={{ color:this.state.color,paddingRight:10 }} /></TouchableOpacity>
+                          <TouchableOpacity onPress={() => this.pressHeart()}><Icon name='ios-star' size={10} style={{ color:this.state.color,paddingRight:10 }} /></TouchableOpacity>
+                          <TouchableOpacity onPress={() => this.pressHeart()}><Icon name='ios-star' size={10} style={{ color:this.state.color,paddingRight:10 }} /></TouchableOpacity>
+                          <TouchableOpacity onPress={() => this.pressHeart()}><Icon name='ios-star' size={10} style={{ color:this.state.color,paddingRight:10 }} /></TouchableOpacity>
+                          <TouchableOpacity onPress={() => this.pressHeart()}><Icon name='ios-star' size={10} style={{ color:this.state.color,paddingRight:10 }} /></TouchableOpacity>
                         </View>
                       </View>
 
