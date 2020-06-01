@@ -21,12 +21,27 @@ $city_name = $obj['city_name'];
 
 $Query = "SELECT * FROM city where city_name = '$city_name'";
 
-$check = mysqli_fetch_array(mysqli_query($con, $Query));
+if(!mysqli_set_charset($con,'utf8')){
+    printf("error converting to utf-8");
+}
+
+$queryResult = mysqli_query($con,$Query);
+
+//$row = mysqli_fetch_array($queryResult);
+
+$resultArray = array();
+
+while($row = mysqli_fetch_assoc($queryResult)){
+    array_push($resultArray,$row['institutionID']);
+}
 
 
-if(isset($check)){
 
-    echo $check;
+if(isset($resultArray)){
+
+    $resultJson = json_encode($resultArray,JSON_UNESCAPED_UNICODE);
+    echo $resultJson;
+    
 
 }
 

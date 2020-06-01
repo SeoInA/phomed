@@ -20,6 +20,8 @@ export default class SecondSelectScreen extends Component{
     this.state = {
       institutionID: this.props.navigation.state.params.institutionID
     }
+    
+    console.log(this.state.institutionID);
   }
     render(){
 

@@ -22,6 +22,8 @@ import MajorScreen from './MajorScreen.js';
 import GenderScreen from './GenderScreen.js';
 import MapScreen from './MapScreen.js';
 import SecondSelectScreen from './SecondSelectScreen';
+import LocationQuery from './LocationQuery.js';
+
 /*
 const ReviewStack = createStackNavigator(
     {
@@ -276,6 +278,13 @@ const AppStack = createStackNavigator(
         navigationOptions:{
           header:null
         }
+      },
+
+      LocationQuery:{
+          screen : LocationQuery,
+          navigationOptions:{
+              header:null
+          }
       },
       
       Map:{
