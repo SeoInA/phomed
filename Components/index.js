@@ -13,6 +13,7 @@ import SettingScreen from './SettingScreen.js';
 import SomethingScreen from './SomethingScreen.js';
 import HomeScreen from './HomeScreen.js';
 import SelectScreen from './SelectScreen.js';
+import SelectScreen_2 from './SelectScreen_2.js';
 import ResultScreen from './ResultScreen.js';
 import WriteScreen from './WriteScreen.js';
 import RegisterScreen from './RegisterScreen.js';
@@ -259,6 +260,12 @@ const AppStack = createStackNavigator(
       },
       Select:{
         screen : SelectScreen,
+        navigationOptions:{
+          header:null
+        }
+      },
+      Select_2:{
+        screen : SelectScreen_2,
         navigationOptions:{
           header:null
         }

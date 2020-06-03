@@ -14,26 +14,23 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import CardView from 'react-native-cardview';
 //import Icon from 'react-native-vector-icons/Ionicons';
 
-export default class HomeScreen extends Component{
+export default class SelectScreen_2 extends Component{
 
     render(){
 
         return (
           <Container style={styles.container}>
 
-            <Header style={{backgroundColor:'black'}}>
-                  <Left style={{marginLeft: 20}}><Icon name='ios-home' style={{ color:'white',paddingLeft:10 }}/></Left>
-                  <Body><Text style={{color:'white', fontWeight:'bold',fontSize:15}}>Home</Text></Body>
+            <Header style={{padding: wp('5%'),backgroundColor:'black'}}>
+                  <Left style={{marginLeft: 20}}><TouchableOpacity onPress={() => this.props.navigation.navigate('Home')}><Icon name='ios-home' size={30} style={{ color:'white',paddingRight:10 }} /></TouchableOpacity></Left>
+                  <Body><Text style={{fontWeight:'bold',color:'white'}}>SELECT</Text></Body>
                   <Right style={{marginRight: 20}}><TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}><Icon name='ios-key' size={30} style={{ color:'white',paddingRight:10 }} /></TouchableOpacity></Right>
             </Header>
             <ScrollView>
 
               <SafeAreaView style={styles.safeAreaView}>
                 <View style={styles.container}>
-                  <View style={{marginTop: 40}}>
-                    <Text style={styles.head_text}>당신이 찾고 있는 장소는</Text>
-                    <Text style={styles.head_text}>병원인가요? 약국인가요?</Text>
-                  </View>
+
                   <View flexDirection="row">
                     <CardView
                       cardElevation={2}
@@ -41,8 +38,9 @@ export default class HomeScreen extends Component{
                       cornerRadius={5}
                       style={styles.card}
                     >
-                      <TouchableOpacity onPress={() => this.props.navigation.navigate('Select')}><Image resizeMode='contain' style={{ paddingRight:10, width:120 , height:200 }} source={require('./img/01.jpg')}/></TouchableOpacity>
-                      <Text style={styles.text}>병원</Text>
+                      <TouchableOpacity onPress={() => this.props.navigation.navigate('Location')}><Image resizeMode='contain' style={{ paddingRight:10, width:120 , height:200 }} source={require('./img/locate.jpg')}/></TouchableOpacity>
+                      <Text style={styles.text}>당신의 위치에 따라</Text>
+                      <Text style={styles.text}>약국을 알려드릴까요?</Text>
                     </CardView>
                     <CardView
                       cardElevation={1}
@@ -50,14 +48,24 @@ export default class HomeScreen extends Component{
                       cornerRadius={5}
                       style={styles.card}
                     >
-                      <TouchableOpacity onPress={() => this.props.navigation.navigate('Select_2')}><Image resizeMode='contain' style={{ paddingRight:10, width:130 , height:200 }} source={require('./img/02.jpg')}/></TouchableOpacity>
-                      <Text style={styles.text}>약국</Text>
+                      <TouchableOpacity onPress={() => this.props.navigation.navigate('Time')}><Image resizeMode='contain' style={{ paddingRight:10, width:130 , height:200 }} source={require('./img/time.jpg')}/></TouchableOpacity>
+                      <Text style={styles.text}>당신이 원하는 시간에 따라</Text>
+                      <Text style={styles.text}>약국을 알려드릴까요?</Text>
                     </CardView>
                   </View>
 
                 </View>
+
               </SafeAreaView>
             </ScrollView>
+            <Body style={{backgroundColor:'black',width:'100%',height:hp('8%')}}>
+              <View >
+                <TouchableOpacity
+                    onPress={() => this.props.navigation.navigate('Result')}>
+                    <Text style={{marginTop:15,width:50,color:'white',fontWeight:'bold'}}>Next</Text>
+                </TouchableOpacity>
+              </View>
+            </Body>
           </Container>
         );
     }
@@ -89,8 +97,9 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignSelf: 'center',
       flex: 1,
+      height:hp('50%'),
       margin: 10,
-      marginTop:50
+      marginTop:100
     },
     head_text :{
       textAlign:'center',

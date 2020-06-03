@@ -15,15 +15,68 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 export default class WriteScreen extends Component{
 
   state={
-    color: '#ccc',
-    pressed: false,
+    color1: '#ccc',
+    color2: '#ccc',
+    color3: '#ccc',
+    color4: '#ccc',
+    color5: '#ccc',
+    pressed1: false,
+    pressed2:false,
+    pressed3:false,
+    pressed4:false,
+    pressed5:false,
+    number:0,
   };
 
   pressHeart(){
-    if(!this.state.pressed){
-      this.setState({ pressed: true,color: 'yellow'});
-    } else {
-      this.setState({ pressed: false,color: '#ccc' });
+    if(this.state.number==0){
+      if(!this.state.pressed1){
+        this.setState({ number:1,pressed1: true,color1: 'yellow'});
+      }
+      else{
+        this.setState({ number:0, pressed1: false,color1: '#ccc'});
+
+      }
+    }
+    else if(this.state.number==1){
+
+      if(!this.state.pressed2){
+        this.setState({ number:2, pressed2: true,color1: 'yellow',color2:'yellow'});
+      }
+      else{
+        this.setState({  number:1,pressed2: false,color1: 'yellow',color2:'#ccc'});
+
+      }
+    }
+    else if(this.state.number==2){
+      if(!this.state.pressed3){
+        this.setState({ number:3,pressed3: true,color1: 'yellow',color2:'yellow',color3:'yellow'});
+
+      }
+      else{
+        this.setState({  number:2,pressed3: false,color1: 'yellow',color2:'yellow',color3:'#ccc'});
+
+      }
+    }
+    else if(this.state.number==3){
+      if(!this.state.pressed4){
+        this.setState({ number:4,pressed4: true,color1: 'yellow',color2:'yellow',color3:'yellow',color4:'yellow'});
+
+      }
+      else{
+        this.setState({  number:3,pressed4: false,color1: 'yellow',color2:'yellow',color3:'yellow',color4:'#ccc'});
+
+      }
+    }
+    else if(this.state.number==4){
+      if(!this.state.pressed5){
+        this.setState({ number:5,pressed5: true,color1: 'yellow',color2:'yellow',color3:'yellow',color4:'yellow',color5:'yellow'});
+
+      }
+      else{
+        this.setState({ number:4, pressed5: false,color1: 'yellow',color2:'yellow',color3:'yellow',color4:'yellow',color5:'#ccc'});
+
+      }
     }
   }
 
@@ -50,11 +103,11 @@ export default class WriteScreen extends Component{
                           <Text style={{marginTop:30,textAlign:'center',fontSize:25,color:'black'}}> 병원이름  </Text>
                         </View>
                         <View flexDirection="row" style={{marginLeft:83,marginTop:10}}>
-                          <TouchableOpacity onPress={() => this.pressHeart()}><Icon name='ios-star' size={10} style={{ color:this.state.color,paddingRight:10 }} /></TouchableOpacity>
-                          <TouchableOpacity onPress={() => this.pressHeart()}><Icon name='ios-star' size={10} style={{ color:this.state.color,paddingRight:10 }} /></TouchableOpacity>
-                          <TouchableOpacity onPress={() => this.pressHeart()}><Icon name='ios-star' size={10} style={{ color:this.state.color,paddingRight:10 }} /></TouchableOpacity>
-                          <TouchableOpacity onPress={() => this.pressHeart()}><Icon name='ios-star' size={10} style={{ color:this.state.color,paddingRight:10 }} /></TouchableOpacity>
-                          <TouchableOpacity onPress={() => this.pressHeart()}><Icon name='ios-star' size={10} style={{ color:this.state.color,paddingRight:10 }} /></TouchableOpacity>
+                          <TouchableOpacity onPress={() => this.pressHeart()}><Icon name='ios-star' size={10} style={{ color:this.state.color1,paddingRight:10 }} /></TouchableOpacity>
+                          <TouchableOpacity onPress={() => this.pressHeart()}><Icon name='ios-star' size={10} style={{ color:this.state.color2,paddingRight:10 }} /></TouchableOpacity>
+                          <TouchableOpacity onPress={() => this.pressHeart()}><Icon name='ios-star' size={10} style={{ color:this.state.color3,paddingRight:10 }} /></TouchableOpacity>
+                          <TouchableOpacity onPress={() => this.pressHeart()}><Icon name='ios-star' size={10} style={{ color:this.state.color4,paddingRight:10 }} /></TouchableOpacity>
+                          <TouchableOpacity onPress={() => this.pressHeart()}><Icon name='ios-star' size={10} style={{ color:this.state.color5,paddingRight:10 }} /></TouchableOpacity>
                         </View>
                       </View>
 
