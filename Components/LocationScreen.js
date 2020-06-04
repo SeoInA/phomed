@@ -31,7 +31,7 @@ export default class LocationScreen extends Component{
               <View style={styles.Cardcontainer}>
 
                 <View flexDirection="row">
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: '죽도동',subject: this.props.navigation.getParam('subject','subject'),gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'죽도동'",subject: this.props.navigation.getParam('subject','subject'),gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
                     
                     <CardView
                       cardElevation={2}
@@ -43,7 +43,7 @@ export default class LocationScreen extends Component{
                     </CardView>
                   </TouchableOpacity>
                 
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: '두호동', subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'두호동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
                     
                     <CardView
                       cardElevation={1}
@@ -57,7 +57,7 @@ export default class LocationScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: '흥해읍', subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'흥해읍'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
                     <CardView
                       cardElevation={2}
                       cardMaxElevation={2}
@@ -68,7 +68,7 @@ export default class LocationScreen extends Component{
                     </CardView>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: '창포동', subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'창포동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
                     <CardView
                       cardElevation={3}
                       cardMaxElevation={3}
@@ -81,7 +81,7 @@ export default class LocationScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: '장성동', subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'장성동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
                     <CardView
                       cardElevation={4}
                       cardMaxElevation={4}
@@ -92,7 +92,7 @@ export default class LocationScreen extends Component{
                     </CardView>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: '양덕동', subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'양덕동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
                     <CardView
                       cardElevation={5}
                       cardMaxElevation={5}
@@ -106,7 +106,7 @@ export default class LocationScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: '기계면', subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'기계면'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
                     <CardView
                       cardElevation={6}
                       cardMaxElevation={6}
@@ -117,7 +117,7 @@ export default class LocationScreen extends Component{
                     </CardView>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: '청하면', subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'청하면'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
                     <CardView
                       cardElevation={7}
                       cardMaxElevation={7}
@@ -129,6 +129,247 @@ export default class LocationScreen extends Component{
                   </TouchableOpacity>
                   
                 </View>
+
+                <View flexDirection="row">
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'남빈동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={8}
+                      cardMaxElevation={8}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                      <Text style={styles.text}>남빈동</Text>              
+                    </CardView>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'대신동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={9}
+                      cardMaxElevation={9}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >         
+                      <Text style={styles.text}>대신동</Text>          
+                    </CardView>
+                  </TouchableOpacity>
+                  
+                </View>
+
+                <View flexDirection="row">
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'대흥동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={10}
+                      cardMaxElevation={10}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                      <Text style={styles.text}>대흥동</Text>              
+                    </CardView>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'덕산동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={11}
+                      cardMaxElevation={11}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >         
+                      <Text style={styles.text}>덕산동</Text>          
+                    </CardView>
+                  </TouchableOpacity>
+                  
+                </View>
+
+                <View flexDirection="row">
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'동빈동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={12}
+                      cardMaxElevation={12}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                      <Text style={styles.text}>동빈동</Text>              
+                    </CardView>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'득량동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={13}
+                      cardMaxElevation={13}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >         
+                      <Text style={styles.text}>득량동</Text>          
+                    </CardView>
+                  </TouchableOpacity>
+                  
+                </View>
+
+                <View flexDirection="row">
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'상원동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={14}
+                      cardMaxElevation={14}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                      <Text style={styles.text}>상원동</Text>              
+                    </CardView>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'송라면'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={15}
+                      cardMaxElevation={15}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >         
+                      <Text style={styles.text}>송라면</Text>          
+                    </CardView>
+                  </TouchableOpacity>
+                  
+                </View>
+
+                <View flexDirection="row">
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'신광면'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={16}
+                      cardMaxElevation={16}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                      <Text style={styles.text}>신광면</Text>              
+                    </CardView>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'신흥동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={17}
+                      cardMaxElevation={17}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >         
+                      <Text style={styles.text}>신흥동</Text>          
+                    </CardView>
+                  </TouchableOpacity>
+                  
+                </View>
+
+                <View flexDirection="row">
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'여천동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={18}
+                      cardMaxElevation={18}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                      <Text style={styles.text}>여천동</Text>              
+                    </CardView>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'용흥동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={19}
+                      cardMaxElevation={19}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >         
+                      <Text style={styles.text}>용흥동</Text>          
+                    </CardView>
+                  </TouchableOpacity>
+                  
+                </View>
+
+                <View flexDirection="row">
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'우현동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={20}
+                      cardMaxElevation={20}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                      <Text style={styles.text}>우현동</Text>              
+                    </CardView>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'죽장면'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={21}
+                      cardMaxElevation={21}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >         
+                      <Text style={styles.text}>죽장면</Text>          
+                    </CardView>
+                  </TouchableOpacity>
+                  
+                </View>
+
+                <View flexDirection="row">
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'중앙동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={22}
+                      cardMaxElevation={22}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                      <Text style={styles.text}>중앙동</Text>              
+                    </CardView>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'학산동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={23}
+                      cardMaxElevation={23}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >         
+                      <Text style={styles.text}>학산동</Text>          
+                    </CardView>
+                  </TouchableOpacity>
+                  
+                </View>
+
+                <View flexDirection="row">
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'학잠동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={24}
+                      cardMaxElevation={24}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                      <Text style={styles.text}>학잠동</Text>              
+                    </CardView>
+                  </TouchableOpacity>
+
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'항구동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={25}
+                      cardMaxElevation={25}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >         
+                      <Text style={styles.text}>항구동</Text>          
+                    </CardView>
+                  </TouchableOpacity>
+                  
+                </View>
+
+                <View flexDirection="row">
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: "'학잠동'", subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                    <CardView
+                      cardElevation={26}
+                      cardMaxElevation={26}
+                      cornerRadius={15}
+                      style={styles.card}
+                    >
+                      <Text style={styles.text}>학잠동</Text>              
+                    </CardView>
+                  </TouchableOpacity>
+                </View>
+
+
+                
                 
               </View>
             </SafeAreaView>

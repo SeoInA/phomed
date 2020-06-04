@@ -50,7 +50,7 @@ export default class HomeScreen extends Component{
                       cornerRadius={5}
                       style={styles.card}
                     >
-                      <TouchableOpacity onPress={() => this.props.navigation.navigate('Select')}><Image resizeMode='contain' style={{ paddingRight:10, width:130 , height:200 }} source={require('./img/02.jpg')}/></TouchableOpacity>
+                      <TouchableOpacity onPress={() => this.props.navigation.navigate('Select_2')}><Image resizeMode='contain' style={{ paddingRight:10, width:130 , height:200 }} source={require('./img/02.jpg')}/></TouchableOpacity>
                       <Text style={styles.text}>약국</Text>
                     </CardView>
                   </View>
