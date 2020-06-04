@@ -26,7 +26,7 @@ export default class LocationQuery extends Component{
 
         
         
-        fetch('http://seongmindbphp.000webhostapp.com/query/city.php',{
+        fetch('http://localhost:8000',{
               method: 'POST',
               headers: {
                   'Accept': 'application/json',
@@ -59,9 +59,7 @@ export default class LocationQuery extends Component{
                         const institutionID = this.state.institutionID;
                         console.log(institutionID);
                         Alert.alert('keep selecting or click next for result');
-                        setTimeout(() => {
-                            this.props.navigation.navigate('SecondSelect',{institutionID: institutionID});
-                        }, 1000);
+                        this.props.navigation.navigate('SecondSelect',{institutionID: institutionID});
                         
                   
                         
@@ -83,7 +81,9 @@ export default class LocationQuery extends Component{
 
      
                     <Image resizeMode='contain' style={styles.image} source={require('./img/POMED_LOGO.png')}/>
-                  
+                    <Footer style={{ backgroundColor: '#FFD8D8'}}>
+                        <Left style={{ marginLeft:50}}><TouchableOpacity onPress={() => this.props.navigation.goBack()}><Text > 🔙 Back </Text></TouchableOpacity></Left>
+                    </Footer>
 
     
             </Container>
