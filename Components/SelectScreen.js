@@ -13,6 +13,24 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 //import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class SelectScreen extends Component{
+    constructor(props){
+      super(props);
+      /*
+      this.state = {
+        city: '',
+        subject: '',
+        gender: '',
+        businessHours: ''
+      }
+      */
+      
+      /*
+      var d = new Date();
+      var n = d.getDay();
+      console.log(n);
+      */
+      console.log(new Date().getDay());
+    }
 
   
     render(){
@@ -36,7 +54,7 @@ export default class SelectScreen extends Component{
 
                   </View>
                   <View style={{paddingLeft:10,paddingRight:25, height: 89,backgroundColor: "#FFA28F"}}>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Location')}><Icon name='ios-heart' style={{ paddingLeft:25, paddingTop: 30 }} /></TouchableOpacity>
+                    <TouchableOpacity onPress={() => {console.log(this.props.navigation.getParam('city' ,'city')), console.log(this.props.navigation.getParam('subject','subject')),console.log(this.props.navigation.getParam('gender','gender')),console.log(this.props.navigation.getParam('businessHours','businessHours')),this.props.navigation.navigate('Location',{city: this.props.navigation.getParam('city','city'),subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}}><Icon name='ios-heart' style={{ paddingLeft:25, paddingTop: 30 }} /></TouchableOpacity>
                   </View>
                 </View>
 
@@ -48,7 +66,7 @@ export default class SelectScreen extends Component{
                     <Text style={styles.text}>당신이 원하는 시간대에{"\n"}진료하는 병원을 알려드릴까요?</Text>
                   </View>
                   <View style={{paddingLeft:10,paddingRight:25, height: 89,backgroundColor: "#FFA28F"}}>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Time')}><Icon name='ios-heart' style={{ paddingLeft:25, paddingTop: 30 }} /></TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Time',{city: this.props.navigation.getParam('city','city'),subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}><Icon name='ios-heart' style={{ paddingLeft:25, paddingTop: 30 }} /></TouchableOpacity>
                   </View>
                 </View>
 
@@ -60,7 +78,7 @@ export default class SelectScreen extends Component{
                     <Text style={styles.text}>당신이 필요한 진료 과목에 따라{"\n"}병원을 알려드릴까요?</Text>
                   </View>
                   <View style={{paddingLeft:10,paddingRight:25, height: 89,backgroundColor: "#FFA28F"}}>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Major')}><Icon name='ios-heart' style={{ paddingLeft:25, paddingTop: 30 }} /></TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Major',{city: this.props.navigation.getParam('city','city'),subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}><Icon name='ios-heart' style={{ paddingLeft:25, paddingTop: 30 }} /></TouchableOpacity>
                   </View>
                 </View>
 
@@ -72,7 +90,7 @@ export default class SelectScreen extends Component{
                     <Text style={styles.text}>당신의 성별과 같은 의사가 있는{"\n"}병원을 알려드릴까요?</Text>
                   </View>
                   <View style={{paddingLeft:10,paddingRight:25, height: 89,backgroundColor: "#FFA28F"}}>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Gender')}><Icon name='ios-heart' style={{ paddingLeft:25, paddingTop: 30 }} /></TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Gender',{city: this.props.navigation.getParam('city','city'),subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}><Icon name='ios-heart' style={{ paddingLeft:25, paddingTop: 30 }} /></TouchableOpacity>
                   </View>
                 </View>
 
@@ -91,7 +109,7 @@ export default class SelectScreen extends Component{
                 <Body style={{backgroundColor:'black'}}>
                   <View >
                     <TouchableOpacity
-                        onPress={() => this.props.navigation.navigate('Result')}>
+                        onPress={() => this.props.navigation.navigate('Result',{city: this.props.navigation.getParam('city','city'),subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours'), day: (new Date().getDay())})}>
                         <Text style={{marginTop:15,width:50,color:'white',fontWeight:'bold'}}>Next</Text>
                     </TouchableOpacity>
                   </View>

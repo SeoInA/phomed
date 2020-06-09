@@ -20,7 +20,7 @@ export default class ResultScreen extends Component{
       this.state = {
         city: '',
         responseMSG: '',
-        institutionID: this.props.navigation.state.params.city
+        institutionID: ''
       }
 
       fetch('http://localhost:8000',{
@@ -95,7 +95,7 @@ export default class ResultScreen extends Component{
                       </View>
 
                       <View style={{marginLeft: 20,marginTop:25}}>
-                        <Text style={{paddingBottom:4}}> 병원위치 : {this.props.navigation.state.params.city}</Text>
+                        <Text style={{paddingBottom:4}}> 병원위치 : </Text>
                         <Text style={{paddingBottom:4}}> 점심시간 : </Text>
                         <Text style={{paddingBottom:4}}> 진료시간 : </Text>
                         <Text style={{paddingBottom:4}}> 전화번호 : </Text>

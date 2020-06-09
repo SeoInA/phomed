@@ -17,16 +17,16 @@ import { SelectableComponent } from 'react-native-ui-lib';
 export default class LocationQuery extends Component{
     constructor(props){
         super(props);
-  
+
         this.state = {
           city: '',
           responseMSG: '',
           city_name: this.props.navigation.state.params.city
         }
 
-        
-        
-        fetch('http://seongmindbphp.000webhostapp.com/query/city.php',{
+
+
+        fetch('http://localhost:8000',{
               method: 'POST',
               headers: {
                   'Accept': 'application/json',
@@ -34,7 +34,7 @@ export default class LocationQuery extends Component{
               },
               body: JSON.stringify({
                   city_name: this.state.city_name
-                  
+
               })
           }).then((response)=> response.json())
                   .then((responseJson)=>{
@@ -45,47 +45,47 @@ export default class LocationQuery extends Component{
                       //data_retrieve(responseJson);
                       this.setState({responseMSG: JSON.stringify(responseJson)},function(){
                           const responseMSG = this.state.responseMSG;
-                          //console.log(responseMSG);              
+                          //console.log(responseMSG);
                           if(responseMSG.includes('No')){
                             Alert.alert(responseMSG);
                             this.props.navigation.navigate('Select');
                           }
                           else{
-                            //console.log(responseMSG);                        
+                            //console.log(responseMSG);
                           }
                          });
-                      
+
                       this.setState({institutionID: JSON.stringify(responseJson)}, function(){
                         const institutionID = this.state.institutionID;
                         console.log(institutionID);
                         Alert.alert('keep selecting or click next for result');
-                        setTimeout(() => {
-                            this.props.navigation.navigate('SecondSelect',{institutionID: institutionID});
-                        }, 1000);
-                        
-                  
-                        
-                       
+                        this.props.navigation.navigate('SecondSelect',{institutionID: institutionID});
+
+
+
+
                       });
-                      
-                      
-                      
+
+
+
                   }).catch((error) =>{
                       console.error(error);
                   });
-          
-  
+
+
       }
 
       render(){
           return(
             <Container style={styles.container}>
 
-     
-                    <Image resizeMode='contain' style={styles.image} source={require('./img/POMED_LOGO.png')}/>
-                  
 
-    
+                    <Image resizeMode='contain' style={styles.image} source={require('./img/POMED_LOGO.png')}/>
+                    <Footer style={{ backgroundColor: '#FFD8D8'}}>
+                        <Left style={{ marginLeft:50}}><TouchableOpacity onPress={() => this.props.navigation.goBack()}><Text > 🔙 Back </Text></TouchableOpacity></Left>
+                    </Footer>
+
+
             </Container>
           );
       }
