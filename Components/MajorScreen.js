@@ -144,7 +144,7 @@ export default class MajorScreen extends Component{
                       style={styles.card}
                     >
                     <TouchableOpacity>
-                      <Text style={styles.text}>치과</Text>
+                      <Text style={styles.text}>소아치과</Text>
                     </TouchableOpacity>
                     </CardView>
                   </View>
@@ -340,7 +340,7 @@ export default class MajorScreen extends Component{
                       style={styles.card}
                     >
                     <TouchableOpacity>
-                      <Text style={styles.text}>한방내과</Text>
+                      <Text style={styles.text}>흉부외과</Text>
                     </TouchableOpacity>
                     </CardView>
                     <CardView
@@ -350,7 +350,7 @@ export default class MajorScreen extends Component{
                       style={styles.card}
                     >
                     <TouchableOpacity>
-                      <Text style={styles.text}>흉부외과</Text>
+                      <Text style={styles.text}>응급실</Text>
                     </TouchableOpacity>
                     </CardView>
                   </View>

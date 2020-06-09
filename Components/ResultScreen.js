@@ -6,13 +6,65 @@ import {
     TextInput,
     TouchableOpacity,
     StyleSheet,
-    Image
+    Image,
+    Alert
 } from 'react-native';
 import { Button, Icon,Container,Body, Right, Left, Header,Footer } from 'native-base';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 //import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class ResultScreen extends Component{
+    constructor(props){
+      super(props);
+
+      this.state = {
+        city: '',
+        responseMSG: '',
+        institutionID: this.props.navigation.state.params.city
+      }
+
+      fetch('http://localhost:8000',{
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type' : 'application/json',
+            },
+            body: JSON.stringify({
+                city_name: this.state.institutionID
+
+            })
+        }).then((response)=> response.json())
+                .then((responseJson)=>{
+                    //responseMSG = responseJson;
+                    //responseMSG = responseMSG.replace('"','');
+                    //responseMSG = responseMSG.replace('"','');
+                    //responseMSG = responseMSG.trim();
+                    //data_retrieve(responseJson);
+                    this.setState({responseMSG: JSON.stringify(responseJson)},function(){
+                        const responseMSG = this.state.responseMSG;
+                        //console.log(responseMSG);
+                        if(responseMSG.includes('No')){
+                          Alert.alert(responseMSG);
+                          this.props.navigation.navigate('Select');
+                        }
+                        else{
+                          //console.log(responseMSG);
+                        }
+                       });
+
+                    this.setState({institutionID: JSON.stringify(responseJson)}, function(){
+                      const instittutionID = this.state.institutionID;
+                      console.log(instittutionID)
+                    });
+
+
+
+                }).catch((error) =>{
+                    console.error(error);
+                });
+
+
+    }
 
     render(){
 
@@ -43,7 +95,7 @@ export default class ResultScreen extends Component{
                       </View>
 
                       <View style={{marginLeft: 20,marginTop:25}}>
-                        <Text style={{paddingBottom:4}}> 병원위치 : </Text>
+                        <Text style={{paddingBottom:4}}> 병원위치 : {this.props.navigation.state.params.city}</Text>
                         <Text style={{paddingBottom:4}}> 점심시간 : </Text>
                         <Text style={{paddingBottom:4}}> 진료시간 : </Text>
                         <Text style={{paddingBottom:4}}> 전화번호 : </Text>

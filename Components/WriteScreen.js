@@ -10,75 +10,126 @@ import {
 } from 'react-native';
 import { Button, Icon,Container,Body, Right, Left, Header,Footer } from 'native-base';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { createBottomTabNavigator, createMaterialTopTabNavigator} from 'react-navigation-tabs';
+
 //import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class WriteScreen extends Component{
 
-  state={
-    color1: '#ccc',
-    color2: '#ccc',
-    color3: '#ccc',
-    color4: '#ccc',
-    color5: '#ccc',
-    pressed1: false,
-    pressed2:false,
-    pressed3:false,
-    pressed4:false,
-    pressed5:false,
-    number:0,
+  static navigationOptions = {
+      header: null,
   };
 
+  constructor(props){
+      super(props)
+
+      this.state = {
+          review: '',
+          responseMSG: '',
+          color1: '#ccc',
+          color2: '#ccc',
+          color3: '#ccc',
+          color4: '#ccc',
+          color5: '#ccc',
+          pressed1: false,
+          pressed2:false,
+          pressed3:false,
+          pressed4:false,
+          pressed5:false,
+          rating:0
+      }
+  }
+
+
   pressHeart(){
-    if(this.state.number==0){
+    if(this.state.rating==0){
       if(!this.state.pressed1){
-        this.setState({ number:1,pressed1: true,color1: 'yellow'});
+        this.setState({ rating:1,pressed1: true,color1: 'yellow'});
       }
       else{
-        this.setState({ number:0, pressed1: false,color1: '#ccc'});
+        this.setState({ rating:0, pressed1: false,color1: '#ccc'});
 
       }
     }
-    else if(this.state.number==1){
+    else if(this.state.rating==1){
 
       if(!this.state.pressed2){
-        this.setState({ number:2, pressed2: true,color1: 'yellow',color2:'yellow'});
+        this.setState({ rating:2, pressed2: true,color1: 'yellow',color2:'yellow'});
       }
       else{
-        this.setState({  number:1,pressed2: false,color1: 'yellow',color2:'#ccc'});
+        this.setState({  rating:1,pressed2: false,color1: 'yellow',color2:'#ccc'});
 
       }
     }
-    else if(this.state.number==2){
+    else if(this.state.rating==2){
       if(!this.state.pressed3){
-        this.setState({ number:3,pressed3: true,color1: 'yellow',color2:'yellow',color3:'yellow'});
+        this.setState({ rating:3,pressed3: true,color1: 'yellow',color2:'yellow',color3:'yellow'});
 
       }
       else{
-        this.setState({  number:2,pressed3: false,color1: 'yellow',color2:'yellow',color3:'#ccc'});
+        this.setState({  rating:2,pressed3: false,color1: 'yellow',color2:'yellow',color3:'#ccc'});
 
       }
     }
-    else if(this.state.number==3){
+    else if(this.state.rating==3){
       if(!this.state.pressed4){
-        this.setState({ number:4,pressed4: true,color1: 'yellow',color2:'yellow',color3:'yellow',color4:'yellow'});
+        this.setState({ rating:4,pressed4: true,color1: 'yellow',color2:'yellow',color3:'yellow',color4:'yellow'});
 
       }
       else{
-        this.setState({  number:3,pressed4: false,color1: 'yellow',color2:'yellow',color3:'yellow',color4:'#ccc'});
+        this.setState({  rating:3,pressed4: false,color1: 'yellow',color2:'yellow',color3:'yellow',color4:'#ccc'});
 
       }
     }
-    else if(this.state.number==4){
+    else if(this.state.rating==4){
       if(!this.state.pressed5){
-        this.setState({ number:5,pressed5: true,color1: 'yellow',color2:'yellow',color3:'yellow',color4:'yellow',color5:'yellow'});
+        this.setState({ rating:5,pressed5: true,color1: 'yellow',color2:'yellow',color3:'yellow',color4:'yellow',color5:'yellow'});
 
       }
       else{
-        this.setState({ number:4, pressed5: false,color1: 'yellow',color2:'yellow',color3:'yellow',color4:'yellow',color5:'#ccc'});
+        this.setState({ rating:4, pressed5: false,color1: 'yellow',color2:'yellow',color3:'yellow',color4:'yellow',color5:'#ccc'});
 
       }
     }
   }
+
+    UserReviewFunction =() =>{
+      const {rating} = this.state;
+      const review=this.state.review;
+
+      fetch('http://seongmindbphp.000webhostapp.com/review/review.php',{
+          method: 'POST',
+          headers: {
+              'Accept': 'application/json',
+              'Content-Type' : 'application/json',
+          },
+          body: JSON.stringify({
+              rating: rating,
+              review: review
+          })
+      }).then((response)=> response.json())
+              .then((responseJson)=>{
+                  //responseMSG = responseJson;
+                  //responseMSG = responseMSG.replace('"','');
+                  //responseMSG = responseMSG.replace('"','');
+                  //responseMSG = responseMSG.trim();
+                  //data_retrieve(responseJson);
+                  this.setState({responseMSG: JSON.stringify(responseJson)},function(){
+                      const responseMSG = this.state.responseMSG;
+                      console.log(responseMSG);
+                      if(responseMSG.includes('Successful')){
+                          this.props.navigation.navigate('Setting');
+                      }
+                      else{
+                          this.props.navigation.navigate('Write');
+                      }
+                     });
+                  Alert.alert(responseJson);
+              }).catch((error) =>{
+                  console.error(error);
+              });
+
+    }
 
 
     render(){
@@ -120,8 +171,9 @@ export default class WriteScreen extends Component{
                             underlineColorAndroid="transparent"
                             placeholder="Type something"
                             placeholderTextColor="#FF8888"
-                            numberOfLines={10}
+                            ratingOfLines={10}
                             multiline={true}
+                            onChangeText = {review =>this.setState({review})}
                           />
                         </View>
                       </View>

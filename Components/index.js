@@ -21,7 +21,9 @@ import LocationScreen from './LocationScreen.js';
 import TimeScreen from './TimeScreen.js';
 import MajorScreen from './MajorScreen.js';
 import GenderScreen from './GenderScreen.js';
-import LocationResultScreen from './LocationResultScreen.js';
+import MapScreen from './MapScreen.js';
+import SecondSelectScreen from './SecondSelectScreen';
+import LocationQuery from './LocationQuery.js';
 
 /*
 const ReviewStack = createStackNavigator(
@@ -264,6 +266,7 @@ const AppStack = createStackNavigator(
           header:null
         }
       },
+
       Select_2:{
         screen : SelectScreen_2,
         navigationOptions:{
@@ -276,14 +279,21 @@ const AppStack = createStackNavigator(
           header:null
         }
       },
-      /*
-      LocationResult:{
-        screen : LocationResultScreen,
+
+      LocationQuery:{
+          screen : LocationQuery,
+          navigationOptions:{
+              header:null
+          }
+      },
+
+      Map:{
+        screen : MapScreen,
         navigationOptions:{
             header:null
         }
       },
-      */
+
       Time:{
         screen : TimeScreen,
         navigationOptions:{

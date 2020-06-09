@@ -32,14 +32,14 @@ export default class LoginScreen extends Component{
             passwd: '',
             responseMSG: ''
         }
-    }   
-    
+    }
+
     _doRegist(){
         // do something
         this.props.navigation.replace('Register')
     }
-    
-    
+
+
     UserLoginFunction = () =>{
 
         const userID = this.state.userID;
@@ -64,7 +64,7 @@ export default class LoginScreen extends Component{
                     //data_retrieve(responseJson);
                     this.setState({responseMSG: JSON.stringify(responseJson)},function(){
                         const responseMSG = this.state.responseMSG;
-                        console.log(responseMSG);              
+                        console.log(responseMSG);
                         if(responseMSG.includes('Successful')){
                             this.props.navigation.navigate('TabNavigator');
                         }
@@ -82,7 +82,7 @@ export default class LoginScreen extends Component{
             this.setState({responseMSG: JSON.stringify(data)})
         }
         */
-        
+
         /*
         const responseMSG = this.state.responseMSG;
 
@@ -93,7 +93,7 @@ export default class LoginScreen extends Component{
         }
         */
 
-                
+
     }
 
     render(){
