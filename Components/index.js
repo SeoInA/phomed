@@ -23,7 +23,9 @@ import GenderScreen from './GenderScreen.js';
 import MapScreen from './MapScreen.js';
 import SecondSelectScreen from './SecondSelectScreen';
 import LocationQuery from './LocationQuery.js';
-
+import ResultQuery from './ResultQuery.js';
+import ResultScreenEach from './ResultScreenEach.js';
+import ResultEachQuery from './ResultEachQuery.js';
 /*
 const ReviewStack = createStackNavigator(
     {
@@ -318,6 +320,25 @@ const AppStack = createStackNavigator(
           header:null
         }
       },
+      ResultQuery : {
+          screen : ResultQuery,
+          navigationOptions:{
+              header:null
+          }
+      },
+      ResultEach: {
+          screen : ResultScreenEach,
+          navigationOptions:{
+              header:null
+          }
+      },
+      EachQuery : {
+          screen :  ResultEachQuery,
+          navigationOptions:{
+              header:null
+          }
+      },
+
       Write : {
         screen : WriteScreen,
         navigationOptions:{

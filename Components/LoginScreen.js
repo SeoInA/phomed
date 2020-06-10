@@ -45,7 +45,7 @@ export default class LoginScreen extends Component{
         const userID = this.state.userID;
         const{passwd} = this.state;
 
-        fetch('http://seongmindbphp.000webhostapp.com/login/login.php',{
+        fetch('http://localhost:8000/login.php',{
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

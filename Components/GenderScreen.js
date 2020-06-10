@@ -26,6 +26,8 @@ export default class GenderScreen extends Component{
                   <Body><Text  style={{ textAlign: 'center',color:'white', fontWeight:'bold',fontSize:17}}>당신의 성별을 알려주세요</Text></Body>
 
             </Header>
+            
+            <ScrollView>
             <SafeAreaView style={styles.safeAreaView}>
               <View style={styles.container}>
                 <View flexDirection="row">
@@ -35,7 +37,7 @@ export default class GenderScreen extends Component{
                     cornerRadius={5}
                     style={styles.card}
                   >
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Select',{gender: '남'})}><Image resizeMode='contain' style={{ paddingRight:10, width:150 , height:200 }} source={require('./img/man.jpg')}/></TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: this.props.navigation.getParam('subject','subject'),gender: "'남'", businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}><Image resizeMode='contain' style={{ paddingRight:10, width:150 , height:200 }} source={require('./img/man.jpg')}/></TouchableOpacity>
                     <Text style={styles.text}>남성</Text>
                   </CardView>
                   <CardView
@@ -44,13 +46,15 @@ export default class GenderScreen extends Component{
                     cornerRadius={5}
                     style={styles.card}
                   >
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Select',{gender: '여'})}><Image resizeMode='contain' style={{ paddingRight:10, width:140 , height:200 }} source={require('./img/woman.jpg')}/></TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: this.props.navigation.getParam('subject','subject'),gender: "'여'", businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}><Image resizeMode='contain' style={{ paddingRight:10, width:140 , height:200 }} source={require('./img/woman.jpg')}/></TouchableOpacity>
                     <Text style={styles.text}>여성</Text>
                   </CardView>
                 </View>
 
               </View>
             </SafeAreaView>
+            </ScrollView>
+
             <Footer style={{ backgroundColor: '#FFD8D8'}}>
               <Left style={{ marginLeft:50}}><TouchableOpacity onPress={() => this.props.navigation.goBack()}><Text > 🔙 Back </Text></TouchableOpacity></Left>
               <Right style={{ marginRight:50}}><TouchableOpacity  onPress={() => this.props.navigation.navigate('Select')}><Text> ➕ Next </Text></TouchableOpacity></Right>

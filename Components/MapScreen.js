@@ -45,7 +45,7 @@ export default class MapScreen extends Component{
           console.log(this.state.errorMsg);
         }
 
-        let returnedLocation = await Location.geocodeAsync("한동대학교");
+        let returnedLocation = await Location.geocodeAsync(this.props.navigation.getParam('address','한동대학교'));
         console.log(returnedLocation[0].latitude, returnedLocation[0].longitude);
         this.setState({targetLatitude: returnedLocation[0].latitude});
         this.setState({targetLongitude: returnedLocation[0].longitude });

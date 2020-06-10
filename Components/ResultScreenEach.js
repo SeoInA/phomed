@@ -17,75 +17,24 @@ export default class ResultScreen extends Component{
     constructor(props){
       super(props);
 
+    
+
       this.state = {
         city: '',
         responseMSG: '',
         institutionID: '',
         resultJson: ''
       }
+      
     }
     
-    showResult = () =>{
-      //console.log(this.props.navigation.getParam('result','no result')); 
-      const jsonfile = this.props.navigation.getParam('result','no result');
-      //console.log(jsonfile[0]['address']);
-    }
+   
       
 
     render(){
-      const jsonfile = this.props.navigation.getParam('result','no result');
-      //console.log(jsonfile[0]['name']);
-      console.log(jsonfile.length)
-      //console.log(jsonfile[jsonfile.length-1]);
-      //console.log(jsonfile[jsonfile.length-1]['institution_name'])
-      
-      const today_num = new Date().getDay()
-      var today_day = '';
-      switch(today_num){
-        case 0:
-            today_day = 'sunday';
-            break;
-        case 1:
-            today_day = 'monday';
-            break;
-        case 2:
-            today_day = 'tuesday';
-            break;
-        case 3:
-            today_day = 'wednesday';
-            break;
-        case 4:
-            today_day = 'thursday';
-            break;
-        case 5:
-            today_day = 'friady';
-            break;
-        case 6:
-            today_day = 'saturday';
-            break;
-    }
-    console.log(today_num,today_day);
-
-    var institution_list = [];
-    var uniqueInstID = [];
-
-    for(let i=0; i<jsonfile.length; i++){
-      if(!uniqueInstID.includes(jsonfile[i]['institutionID'])){
-        uniqueInstID.push(jsonfile[i]['institutionID'])
-        institution_list.push(
-          <View> 
-            <TouchableOpacity onPress={()=> this.props.navigation.navigate('EachQuery',{institutionID: jsonfile[i]['institutionID']})}>
-              <Text> {jsonfile[i]['institution_name']}</Text>
-            </TouchableOpacity>
-          </View>
-        )
-      }
-      else{
-
-      }
-    }
-
-
+      const resultJson = this.props.navigation.getParam('eachResult','no result json')
+      const today_day = this.props.navigation.getParam('today_day','no match day found')
+    
         return (
           <Container style={styles.container}>
 
@@ -99,19 +48,49 @@ export default class ResultScreen extends Component{
                
                 <View style={styles.wrapContent}>
                     <View style={styles.content}>
-                    {institution_list}
+                      <View>
+                        <Text style={{textAlign:'center',fontWeight:'bold',fontSize:27, paddingTop:30,color:'#FF8888'}}>당신에게 추천하는{'\n'}병원입니다 </Text>
+                      </View>
+                      <View flexDirection="row">
+                        <View style={{marginLeft: 20,width:10}}>
+                          <Image resizeMode='contain' style={styles.image} source={require('./img/thumb.png')}/>
+
+                        </View>
+                        <View >
+                          <Text style={{marginTop:40,marginLeft:120,textAlign:'center',fontSize:25,color:'black'}}> 병원이름  </Text>
+                        </View>
+
+                      </View>
+            
+                      <View style={{marginLeft: 20,marginTop:25}}>
+                     
+                          
+                        <Text style={{paddingBottom:4}}> 병원위치 : {resultJson[0]['address']}</Text> 
+        <Text style={{paddingBottom:4}}> 점심시간 : {resultJson[0]['lunch_break']}</Text>
+        <Text style={{paddingBottom:4}}> 진료시간 : {resultJson[0][today_day]}</Text>
+        <Text style={{paddingBottom:4}}> 전화번호 : {resultJson[0]['phoneNUM']}</Text>
+        <Text style={{paddingBottom:4}}> 의사이름 : {resultJson[0]['name']}</Text>
+                        <Text style={{paddingBottom:4}}> 의사성별 : {resultJson[0]['gender']} </Text>
+                        <Text style={{paddingBottom:4}}> 버스정거장 : </Text>
+                        <Text style={{paddingBottom:4}}> 버스 번호 : </Text>
+        <Text style={{paddingBottom:4}}> 병원 진료과목 : {resultJson[0]['subject']}</Text>
+                        <Text style={{paddingBottom:4}}> 리뷰 : </Text>
+                        <Text style={{paddingBottom:4}}> 별정 : </Text>
+                        <Text style={{paddingBottom:4}}> Comment : </Text>
+                          
+                      </View>
                     </View>
                 </View>
                
                
-               
+          
             </ScrollView>
 
             <Footer>
 
-                  <Left style={{marginLeft: 20}}><TouchableOpacity><Text> ✔️ Scrap </Text></TouchableOpacity></Left>
+                  <Left style={{marginLeft: 20}}><TouchableOpacity onPress={()=> this.showResult()}><Text> ✔️ Scrap </Text></TouchableOpacity></Left>
                   <Body><TouchableOpacity onPress={() => this.props.navigation.navigate('Write')}><Text> 📝 Write Review </Text></TouchableOpacity></Body>
-                  <Right style={{marginRight: 20}}><TouchableOpacity onPress={() => this.props.navigation.goBack()}><Text> 🔙 Back </Text></TouchableOpacity></Right>
+                  <Right style={{marginRight: 20}}><TouchableOpacity onPress={() => {this.props.navigation.goBack()}}><Text> 🔙 Back </Text></TouchableOpacity></Right>
             </Footer>
           </Container>
         );
