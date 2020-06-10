@@ -38,7 +38,7 @@ export default class SelectScreen_2 extends Component{
                       cornerRadius={5}
                       style={styles.card}
                     >
-                      <TouchableOpacity onPress={() => this.props.navigation.navigate('Location')}><Image resizeMode='contain' style={{ paddingRight:10, width:120 , height:200 }} source={require('./img/locate.jpg')}/></TouchableOpacity>
+                      <TouchableOpacity onPress={() => this.props.navigation.navigate('Location_2')}><Image resizeMode='contain' style={{ paddingRight:10, width:120 , height:200 }} source={require('./img/locate.jpg')}/></TouchableOpacity>
                       <Text style={styles.text}>당신의 위치에 따라</Text>
                       <Text style={styles.text}>약국을 알려드릴까요?</Text>
                     </CardView>
@@ -48,7 +48,7 @@ export default class SelectScreen_2 extends Component{
                       cornerRadius={5}
                       style={styles.card}
                     >
-                      <TouchableOpacity onPress={() => this.props.navigation.navigate('Time')}><Image resizeMode='contain' style={{ paddingRight:10, width:130 , height:200 }} source={require('./img/time.jpg')}/></TouchableOpacity>
+                      <TouchableOpacity onPress={() => this.props.navigation.navigate('Time_2')}><Image resizeMode='contain' style={{ paddingRight:10, width:130 , height:200 }} source={require('./img/time.jpg')}/></TouchableOpacity>
                       <Text style={styles.text}>당신이 원하는 시간에 따라</Text>
                       <Text style={styles.text}>약국을 알려드릴까요?</Text>
                     </CardView>

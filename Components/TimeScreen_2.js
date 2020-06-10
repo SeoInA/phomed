@@ -14,7 +14,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import CardView from 'react-native-cardview';
 //import Icon from 'react-native-vector-icons/Ionicons';
 
-export default class TimeScreen extends Component{
+export default class TimeScreen_2 extends Component{
 
     render(){
 
@@ -31,7 +31,7 @@ export default class TimeScreen extends Component{
               <View style={styles.Cardcontainer}>
 
                 <View flexDirection="row">
-                <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city') , subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '09:00-10:00'}) }>
+                <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select_2',{city: this.props.navigation.getParam('city','city') , subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '09:00-10:00'}) }>
                   <CardView
                     cardElevation={2}
                     cardMaxElevation={2}
@@ -43,7 +43,7 @@ export default class TimeScreen extends Component{
                   </CardView>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '10:00-11:00'})}>
+                <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select_2',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '10:00-11:00'})}>
                   <CardView
                     cardElevation={1}
                     cardMaxElevation={1}
@@ -57,7 +57,7 @@ export default class TimeScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '11:00-12:00'})}>
+                <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select_2',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '11:00-12:00'})}>
                   <CardView
                     cardElevation={2}
                     cardMaxElevation={2}
@@ -70,7 +70,7 @@ export default class TimeScreen extends Component{
                   </CardView>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '12:00-13:00'})}>
+                <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select_2',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '12:00-13:00'})}>
                   <CardView
                     cardElevation={3}
                     cardMaxElevation={3}
@@ -85,7 +85,7 @@ export default class TimeScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '13:00-14:00'})}>
+                <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select_2',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '13:00-14:00'})}>
                   <CardView
                     cardElevation={4}
                     cardMaxElevation={4}
@@ -98,7 +98,7 @@ export default class TimeScreen extends Component{
                   </CardView>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '14:00-15:00'})}>
+                <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select_2',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '14:00-15:00'})}>
                   <CardView
                     cardElevation={5}
                     cardMaxElevation={5}
@@ -113,7 +113,7 @@ export default class TimeScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '15:00-16:00'})}>
+                <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select_2',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '15:00-16:00'})}>
                   <CardView
                     cardElevation={6}
                     cardMaxElevation={6}
@@ -126,7 +126,7 @@ export default class TimeScreen extends Component{
                   </CardView>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '16:00-17:00'})}>
+                <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select_2',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '16:00-17:00'})}>
                   <CardView
                     cardElevation={7}
                     cardMaxElevation={7}
@@ -141,7 +141,7 @@ export default class TimeScreen extends Component{
                 </View>
 
               <View flexDirection="row">
-              <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '17:00-18:00'})}>
+              <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select_2',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '15:00-16:00'})}>
                 <CardView
                   cardElevation={6}
                   cardMaxElevation={6}
@@ -154,7 +154,7 @@ export default class TimeScreen extends Component{
                 </CardView>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '18:00-19:00'})}>
+              <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select_2',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '16:00-17:00'})}>
                 <CardView
                   cardElevation={7}
                   cardMaxElevation={7}
@@ -169,7 +169,7 @@ export default class TimeScreen extends Component{
               </View>
 
               <View flexDirection="row">
-              <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '20:00-21:00'})}>
+              <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select_2',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '15:00-16:00'})}>
                 <CardView
                   cardElevation={6}
                   cardMaxElevation={6}
@@ -182,7 +182,7 @@ export default class TimeScreen extends Component{
                 </CardView>
               </TouchableOpacity>
 
-              <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '21:00-22:00'})}>
+              <TouchableOpacity onPress = {()=> this.props.navigation.navigate('Select_2',{city: this.props.navigation.getParam('city','city'), subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: '16:00-17:00'})}>
                 <CardView
                   cardElevation={7}
                   cardMaxElevation={7}
@@ -203,7 +203,7 @@ export default class TimeScreen extends Component{
             <Footer style={{ backgroundColor: '#FFD8D8'}}>
                   <Left style={{ marginLeft:50}}><TouchableOpacity onPress={() => this.props.navigation.goBack()}><Text > 🔙 Back </Text></TouchableOpacity></Left>
 
-                  <Right style={{ marginRight:50}}><TouchableOpacity  onPress={() => this.props.navigation.navigate('Select')}><Text> ➕ Next </Text></TouchableOpacity></Right>
+                  <Right style={{ marginRight:50}}><TouchableOpacity  onPress={() => this.props.navigation.navigate('Select_2')}><Text> ➕ Next </Text></TouchableOpacity></Right>
             </Footer>
           </Container>
         );

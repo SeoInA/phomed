@@ -50,7 +50,7 @@ export default class RegisterScreen extends Component{
 
     
         
-        fetch('http://seongmindbphp.000webhostapp.com/register/register.php',{
+        fetch('http://localhost:8000/register.php',{
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

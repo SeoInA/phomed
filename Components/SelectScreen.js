@@ -23,7 +23,7 @@ export default class SelectScreen extends Component{
         businessHours: ''
       }
       */
-      
+
       /*
       var d = new Date();
       var n = d.getDay();
@@ -32,7 +32,7 @@ export default class SelectScreen extends Component{
       console.log(new Date().getDay());
     }
 
-  
+
     render(){
 
         return (
@@ -109,7 +109,7 @@ export default class SelectScreen extends Component{
                 <Body style={{backgroundColor:'black'}}>
                   <View >
                     <TouchableOpacity
-                        onPress={() => this.props.navigation.navigate('Result',{city: this.props.navigation.getParam('city','city'),subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours'), day: (new Date().getDay())})}>
+                        onPress={() => this.props.navigation.navigate('ResultQuery',{city: this.props.navigation.getParam('city','city_name'),subject: this.props.navigation.getParam('subject','subject'), gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours'), day: (new Date().getDay())})}>
                         <Text style={{marginTop:15,width:50,color:'white',fontWeight:'bold'}}>Next</Text>
                     </TouchableOpacity>
                   </View>

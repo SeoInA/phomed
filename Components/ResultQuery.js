@@ -14,27 +14,25 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import { SelectableComponent } from 'react-native-ui-lib';
 
 
-export default class LocationQuery extends Component{
+export default class ResultQuery extends Component{
     constructor(props){
         super(props);
+    }
 
-        this.state = {
-          city: '',
-          responseMSG: '',
-          city_name: this.props.navigation.getParam('city','city_name')
-        }
-
-
-
-        fetch('http://localhost:8000/city.php',{
+    showResult = () =>{
+        fetch('http://localhost:8000/result.php',{
               method: 'POST',
               headers: {
                   'Accept': 'application/json',
                   'Content-Type' : 'application/json',
               },
               body: JSON.stringify({
-                  city_name: this.state.city_name
-
+                gender: this.props.navigation.getParam('gender','gender'),
+                city_name: this.props.navigation.getParam('city','city_name'),
+                subject: this.props.navigation.getParam('subject','subject'),
+                businessHours: this.props.navigation.getParam('businessHours','businessHours'),
+                day: this.props.navigation.getParam('day','monday')
+            
               })
           }).then((response)=> response.json())
                   .then((responseJson)=>{
@@ -45,47 +43,56 @@ export default class LocationQuery extends Component{
                       //data_retrieve(responseJson);
                       this.setState({responseMSG: JSON.stringify(responseJson)},function(){
                           const responseMSG = this.state.responseMSG;
-                          //console.log(responseMSG);
+                          //console.log(responseMSG);              
                           if(responseMSG.includes('No')){
                             Alert.alert(responseMSG);
                             this.props.navigation.navigate('Select');
                           }
                           else{
-                            //console.log(responseMSG);
+                            //console.log(responseMSG);                        
                           }
                          });
-
+                      
                       this.setState({institutionID: JSON.stringify(responseJson)}, function(){
                         const institutionID = this.state.institutionID;
                         console.log(institutionID);
-                        Alert.alert('keep selecting or click next for result');
-                        this.props.navigation.navigate('Select');
-
-
-
-
+                        Alert.alert('result from your choice');
+                        
+                        //this.props.navigation.navigate('Result');
+                        
+                        
+                  
+                        
+                       
                       });
-
-
-
+                      
+                      
+                      
                   }).catch((error) =>{
                       console.error(error);
                   });
+          
+  
+      
+    };
+  
+        
 
-
-      }
+        
+        
+        
 
       render(){
           return(
             <Container style={styles.container}>
 
-
+     
                     <Image resizeMode='contain' style={styles.image} source={require('./img/POMED_LOGO.png')}/>
+                  
                     <Footer style={{ backgroundColor: '#FFD8D8'}}>
                         <Left style={{ marginLeft:50}}><TouchableOpacity onPress={() => this.props.navigation.goBack()}><Text > 🔙 Back </Text></TouchableOpacity></Left>
+                        <Right style={{ marginLeft:50}}><TouchableOpacity onPress={() => {this.props.navigation.navigate('Select'),this.showResult()}}><Text > ➕ Next  </Text></TouchableOpacity></Right>
                     </Footer>
-
-
             </Container>
           );
       }

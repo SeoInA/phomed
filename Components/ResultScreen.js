@@ -46,6 +46,7 @@ export default class ResultScreen extends Component{
                         if(responseMSG.includes('No')){
                           Alert.alert(responseMSG);
                           this.props.navigation.navigate('Select');
+
                         }
                         else{
                           //console.log(responseMSG);
@@ -115,7 +116,8 @@ export default class ResultScreen extends Component{
             <Footer>
 
                   <Left style={{marginLeft: 20}}><TouchableOpacity ><Text> ✔️ Scrap </Text></TouchableOpacity></Left>
-                  <Body><TouchableOpacity onPress={() => this.props.navigation.navigate('Write')}><Text> 📝 Write Review </Text></TouchableOpacity></Body>
+                  <Body><TouchableOpacity onPress={() => this.props.navigation.navigate('Write',{institutionID: this.state.institutionID})}><Text> 📝 Write Review </Text></TouchableOpacity></Body>
+
                   <Right style={{marginRight: 20}}><TouchableOpacity onPress={() => this.props.navigation.goBack()}><Text> 🔙 Back </Text></TouchableOpacity></Right>
             </Footer>
           </Container>

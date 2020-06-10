@@ -36,8 +36,56 @@ export default class WriteScreen extends Component{
           pressed3:false,
           pressed4:false,
           pressed5:false,
-          rating:0
+          rating:0,
+          userID: this.props.navigation.getParam('userID','userID'),
+          institutionID:this.props.navigation.getParam('institutionID','institutionID')
       }
+  }
+
+  UserRegistrationFunction = () =>{
+
+      const userID = this.state.userID;
+      const institutionID = this.state.institutionID;
+      const{review} = this.state;
+      const rating = this.state.rating;
+
+
+
+      fetch('http://localhost:8000/review.php',{
+          method: 'POST',
+          headers: {
+              'Accept': 'application/json',
+              'Content-Type' : 'application/json',
+          },
+          body: JSON.stringify({
+              institutionID: institutionID,
+              userID: userID,
+              rating: rating,
+              review: review
+          })
+      }).then((response)=> response.json())
+              .then((responseJson)=>{
+                  /*responseMSG = JSON.stringify(responseJson);
+                  responseMSG = responseMSG.replace('"','');
+                  responseMSG = responseMSG.replace('"','');
+                  responseMSG = responseMSG.trim();
+                  */
+                 this.setState({responseMSG: JSON.stringify(responseJson)},function(){
+                  const responseMSG = this.state.responseMSG;
+                  console.log(responseMSG);
+                  if(responseMSG.includes('Successful')){
+                      this.props.navigation.navigate('Something');
+                  }
+                  else{
+
+                      this.props.navigation.goBack();
+                  }
+                 });
+                  Alert.alert(responseJson);
+              }).catch((error) =>{
+                  console.error(error);
+              });
+
   }
 
 
@@ -92,44 +140,6 @@ export default class WriteScreen extends Component{
       }
     }
   }
-
-    UserReviewFunction =() =>{
-      const {rating} = this.state;
-      const review=this.state.review;
-
-      fetch('http://seongmindbphp.000webhostapp.com/review/review.php',{
-          method: 'POST',
-          headers: {
-              'Accept': 'application/json',
-              'Content-Type' : 'application/json',
-          },
-          body: JSON.stringify({
-              rating: rating,
-              review: review
-          })
-      }).then((response)=> response.json())
-              .then((responseJson)=>{
-                  //responseMSG = responseJson;
-                  //responseMSG = responseMSG.replace('"','');
-                  //responseMSG = responseMSG.replace('"','');
-                  //responseMSG = responseMSG.trim();
-                  //data_retrieve(responseJson);
-                  this.setState({responseMSG: JSON.stringify(responseJson)},function(){
-                      const responseMSG = this.state.responseMSG;
-                      console.log(responseMSG);
-                      if(responseMSG.includes('Successful')){
-                          this.props.navigation.navigate('Setting');
-                      }
-                      else{
-                          this.props.navigation.navigate('Write');
-                      }
-                     });
-                  Alert.alert(responseJson);
-              }).catch((error) =>{
-                  console.error(error);
-              });
-
-    }
 
 
     render(){

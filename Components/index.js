@@ -19,12 +19,14 @@ import WriteScreen from './WriteScreen.js';
 import RegisterScreen from './RegisterScreen.js';
 import LocationScreen from './LocationScreen.js';
 import TimeScreen from './TimeScreen.js';
+import LocationScreen_2 from './LocationScreen_2.js';
+import TimeScreen_2 from './TimeScreen_2.js';
 import MajorScreen from './MajorScreen.js';
 import GenderScreen from './GenderScreen.js';
 import MapScreen from './MapScreen.js';
 import SecondSelectScreen from './SecondSelectScreen';
 import LocationQuery from './LocationQuery.js';
-
+import ResultQuery from './ResultQuery.js';
 /*
 const ReviewStack = createStackNavigator(
     {
@@ -279,6 +281,12 @@ const AppStack = createStackNavigator(
           header:null
         }
       },
+      Location_2:{
+        screen : LocationScreen_2,
+        navigationOptions:{
+          header:null
+        }
+      },
 
       LocationQuery:{
           screen : LocationQuery,
@@ -296,6 +304,12 @@ const AppStack = createStackNavigator(
 
       Time:{
         screen : TimeScreen,
+        navigationOptions:{
+          header:null
+        }
+      },
+      Time_2:{
+        screen : TimeScreen_2,
         navigationOptions:{
           header:null
         }
@@ -318,6 +332,13 @@ const AppStack = createStackNavigator(
           header:null
         }
       },
+      ResultQuery : {
+          screen : ResultQuery,
+          navigationOptions:{
+              header:null
+          }
+      },
+
       Write : {
         screen : WriteScreen,
         navigationOptions:{
