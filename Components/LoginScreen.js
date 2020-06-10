@@ -30,7 +30,8 @@ export default class LoginScreen extends Component{
         this.state = {
             userID: '',
             passwd: '',
-            responseMSG: ''
+            responseMSG: '',
+            institutionID:this.props.navigation.getParam('institutionID','institutionID')
         }
     }
 
@@ -66,7 +67,7 @@ export default class LoginScreen extends Component{
                         const responseMSG = this.state.responseMSG;
                         console.log(responseMSG);
                         if(responseMSG.includes('Successful')){
-                            this.props.navigation.navigate('TabNavigator');
+                            this.props.navigation.navigate('Write',{userID: this.state.userID,institutionID:this.state.insitutionID});
                         }
                         else{
                             this.props.navigation.navigate('Login');

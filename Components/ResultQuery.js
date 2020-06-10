@@ -20,7 +20,7 @@ export default class ResultQuery extends Component{
     }
 
     showResult = () =>{
-        fetch('http://localhost:8000/result.php',{
+        fetch('http://localhost:8000/schedule.php',{
               method: 'POST',
               headers: {
                   'Accept': 'application/json',
@@ -30,9 +30,9 @@ export default class ResultQuery extends Component{
                 gender: this.props.navigation.getParam('gender','gender'),
                 city_name: this.props.navigation.getParam('city','city_name'),
                 subject: this.props.navigation.getParam('subject','subject'),
-                businessHours: this.props.navigation.getParam('businessHours','businessHours'),
-                day: this.props.navigation.getParam('day','monday')
-            
+                businessHours: this.props.navigation.getParam('businessHours','24:00-00:00'),
+                day: this.props.navigation.getParam('day','1')
+
               })
           }).then((response)=> response.json())
                   .then((responseJson)=>{
@@ -43,55 +43,50 @@ export default class ResultQuery extends Component{
                       //data_retrieve(responseJson);
                       this.setState({responseMSG: JSON.stringify(responseJson)},function(){
                           const responseMSG = this.state.responseMSG;
-                          //console.log(responseMSG);              
+                          //console.log(responseMSG);
                           if(responseMSG.includes('No')){
                             Alert.alert(responseMSG);
                             this.props.navigation.navigate('Select');
                           }
                           else{
-                            //console.log(responseMSG);                        
+                            this.setState({institutionID: JSON.stringify(responseJson)}, function(){
+                                const institutionID = this.state.institutionID;
+                                console.log(institutionID);
+                                Alert.alert('result from your choice');
+                                this.props.navigation.navigate('Result',{result: responseJson});
+                              });
+
                           }
                          });
-                      
-                      this.setState({institutionID: JSON.stringify(responseJson)}, function(){
-                        const institutionID = this.state.institutionID;
-                        console.log(institutionID);
-                        Alert.alert('result from your choice');
-                        
-                        //this.props.navigation.navigate('Result');
-                        
-                        
-                  
-                        
-                       
-                      });
-                      
-                      
-                      
+
+
+
+
+
                   }).catch((error) =>{
                       console.error(error);
                   });
-          
-  
-      
-    };
-  
-        
 
-        
-        
-        
+
+
+    };
+
+
+
+
+
+
 
       render(){
           return(
             <Container style={styles.container}>
 
-     
+
                     <Image resizeMode='contain' style={styles.image} source={require('./img/POMED_LOGO.png')}/>
-                  
+
                     <Footer style={{ backgroundColor: '#FFD8D8'}}>
                         <Left style={{ marginLeft:50}}><TouchableOpacity onPress={() => this.props.navigation.goBack()}><Text > 🔙 Back </Text></TouchableOpacity></Left>
-                        <Right style={{ marginLeft:50}}><TouchableOpacity onPress={() => {this.props.navigation.navigate('Select'),this.showResult()}}><Text > ➕ Next  </Text></TouchableOpacity></Right>
+                        <Right style={{ marginLeft:50}}><TouchableOpacity onPress={() => {this.showResult()}}><Text > ➕ Next  </Text></TouchableOpacity></Right>
                     </Footer>
             </Container>
           );

@@ -37,19 +37,23 @@ if(isset($check)){
 }
 
 else{
-    $SQL_Query = "INSERT INTO review VALUES('$institutionID','$userID','$rating','$review')";
+
+    $SQL_Query = "insert into review(institutionID,userID,rating,review) values
+                        ('$institutionID','$userID','$rating','$review')";
 
     if(mysqli_query($con, $SQL_Query)){
 
-        $RegistrationMSG = 'Writing review was Successful.';
+        $ReviewMSG = 'Writing review was Successful.';
 
-        $RegistrationMSGjson = json_encode($RegistrationMSG);
+        $ReviewMSGjson = json_encode($ReviewMSG);
 
-        echo $RegistrationMSGjson;
+        echo $ReviewMSGjson;
 
     }
     else{
-        echo 'Try Again';
+        $errorMSG="Error: Try Again.";
+        $errorMSGjson=json_encode($errorMSG);
+        echo $errorMSGjson;
     }
 
 }

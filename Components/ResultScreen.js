@@ -20,54 +20,71 @@ export default class ResultScreen extends Component{
       this.state = {
         city: '',
         responseMSG: '',
-        institutionID: ''
+        institutionID: '',
+        resultJson: ''
       }
-
-      fetch('http://localhost:8000',{
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type' : 'application/json',
-            },
-            body: JSON.stringify({
-                city_name: this.state.institutionID
-
-            })
-        }).then((response)=> response.json())
-                .then((responseJson)=>{
-                    //responseMSG = responseJson;
-                    //responseMSG = responseMSG.replace('"','');
-                    //responseMSG = responseMSG.replace('"','');
-                    //responseMSG = responseMSG.trim();
-                    //data_retrieve(responseJson);
-                    this.setState({responseMSG: JSON.stringify(responseJson)},function(){
-                        const responseMSG = this.state.responseMSG;
-                        //console.log(responseMSG);
-                        if(responseMSG.includes('No')){
-                          Alert.alert(responseMSG);
-                          this.props.navigation.navigate('Select');
-
-                        }
-                        else{
-                          //console.log(responseMSG);
-                        }
-                       });
-
-                    this.setState({institutionID: JSON.stringify(responseJson)}, function(){
-                      const instittutionID = this.state.institutionID;
-                      console.log(instittutionID)
-                    });
-
-
-
-                }).catch((error) =>{
-                    console.error(error);
-                });
-
-
     }
 
+    showResult = () =>{
+      //console.log(this.props.navigation.getParam('result','no result'));
+      const jsonfile = this.props.navigation.getParam('result','no result');
+      //console.log(jsonfile[0]['address']);
+    }
+
+
     render(){
+      const jsonfile = this.props.navigation.getParam('result','no result');
+      //console.log(jsonfile[0]['name']);
+      console.log(jsonfile.length)
+      //console.log(jsonfile[jsonfile.length-1]);
+      //console.log(jsonfile[jsonfile.length-1]['institution_name'])
+
+      const today_num = new Date().getDay()
+      var today_day = '';
+      switch(today_num){
+        case 0:
+            today_day = 'sunday';
+            break;
+        case 1:
+            today_day = 'monday';
+            break;
+        case 2:
+            today_day = 'tuesday';
+            break;
+        case 3:
+            today_day = 'wednesday';
+            break;
+        case 4:
+            today_day = 'thursday';
+            break;
+        case 5:
+            today_day = 'friady';
+            break;
+        case 6:
+            today_day = 'saturday';
+            break;
+    }
+    console.log(today_num,today_day);
+
+    var institution_list = [];
+    var uniqueInstID = [];
+
+    for(let i=0; i<jsonfile.length; i++){
+      if(!uniqueInstID.includes(jsonfile[i]['institutionID'])){
+        uniqueInstID.push(jsonfile[i]['institutionID'])
+        institution_list.push(
+          <View>
+            <TouchableOpacity onPress={()=> this.props.navigation.navigate('EachQuery',{institutionID: jsonfile[i]['institutionID']})}>
+              <Text> {jsonfile[i]['institution_name']}</Text>
+            </TouchableOpacity>
+          </View>
+        )
+      }
+      else{
+
+      }
+    }
+
 
         return (
           <Container style={styles.container}>
@@ -79,45 +96,21 @@ export default class ResultScreen extends Component{
             </Header>
             <ScrollView>
 
+
                 <View style={styles.wrapContent}>
                     <View style={styles.content}>
-                      <View>
-                        <Text style={{textAlign:'center',fontWeight:'bold',fontSize:27, paddingTop:30,color:'#FF8888'}}>당신에게 추천하는{'\n'}병원입니다 </Text>
-                      </View>
-                      <View flexDirection="row">
-                        <View style={{marginLeft: 20,width:10}}>
-                          <Image resizeMode='contain' style={styles.image} source={require('./img/thumb.png')}/>
-
-                        </View>
-                        <View >
-                          <Text style={{marginTop:40,marginLeft:120,textAlign:'center',fontSize:25,color:'black'}}> 병원이름  </Text>
-                        </View>
-
-                      </View>
-
-                      <View style={{marginLeft: 20,marginTop:25}}>
-                        <Text style={{paddingBottom:4}}> 병원위치 : </Text>
-                        <Text style={{paddingBottom:4}}> 점심시간 : </Text>
-                        <Text style={{paddingBottom:4}}> 진료시간 : </Text>
-                        <Text style={{paddingBottom:4}}> 전화번호 : </Text>
-                        <Text style={{paddingBottom:4}}> 교통편 : </Text>
-                        <Text style={{paddingBottom:4}}> 버스정거장 : </Text>
-                        <Text style={{paddingBottom:4}}> 버스 번호 : </Text>
-                        <Text style={{paddingBottom:4}}> 병원 진료과목 : </Text>
-                        <Text style={{paddingBottom:4}}> 리뷰 : </Text>
-                        <Text style={{paddingBottom:4}}> 별정 : </Text>
-                        <Text style={{paddingBottom:4}}> Comment : </Text>
-                      </View>
+                    {institution_list}
                     </View>
                 </View>
+
+
 
             </ScrollView>
 
             <Footer>
 
-                  <Left style={{marginLeft: 20}}><TouchableOpacity ><Text> ✔️ Scrap </Text></TouchableOpacity></Left>
-                  <Body><TouchableOpacity onPress={() => this.props.navigation.navigate('Write',{institutionID: this.state.institutionID})}><Text> 📝 Write Review </Text></TouchableOpacity></Body>
-
+                  <Left style={{marginLeft: 20}}><TouchableOpacity><Text> ✔️ Scrap </Text></TouchableOpacity></Left>
+                  <Body><TouchableOpacity onPress={() => this.props.navigation.navigate('Write')}><Text> 📝 Write Review </Text></TouchableOpacity></Body>
                   <Right style={{marginRight: 20}}><TouchableOpacity onPress={() => this.props.navigation.goBack()}><Text> 🔙 Back </Text></TouchableOpacity></Right>
             </Footer>
           </Container>

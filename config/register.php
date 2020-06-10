@@ -42,7 +42,7 @@ if(isset($check)){
 }
 
 else{
-    $SQL_Query = "insert into user (userID,passwd,name,gender,age,user_phone) values 
+    $SQL_Query = "insert into user (userID,passwd,name,gender,age,user_phone) values
                         ('$userID','$passwd','$name','$gender','$age','$user_phone')";
 
     if(mysqli_query($con, $SQL_Query)){

@@ -26,7 +26,8 @@ export default class TimeScreen extends Component{
                   <Body><Text  style={{ textAlign: 'center',color:'white', fontWeight:'bold',fontSize:17}}>당신이 원하는 시간대를   알려주세요</Text></Body>
 
             </Header>
-
+            
+            <ScrollView>
             <SafeAreaView style={styles.safeAreaView}>
               <View style={styles.Cardcontainer}>
 
@@ -198,7 +199,7 @@ export default class TimeScreen extends Component{
 
             </View>
             </SafeAreaView>
-
+            </ScrollView>
 
             <Footer style={{ backgroundColor: '#FFD8D8'}}>
                   <Left style={{ marginLeft:50}}><TouchableOpacity onPress={() => this.props.navigation.goBack()}><Text > 🔙 Back </Text></TouchableOpacity></Left>

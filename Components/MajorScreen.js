@@ -27,12 +27,11 @@ export default class MajorScreen extends Component{
 
             </Header>
             <ScrollView>
-
             <SafeAreaView style={styles.safeAreaView}>
               <View style={styles.Cardcontainer}>
 
                 <View flexDirection="row">
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'치과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'치과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
 
                     <CardView
                       cardElevation={2}
@@ -44,7 +43,7 @@ export default class MajorScreen extends Component{
                     </CardView>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'가정의학과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'가정의학과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
 
                     <CardView
                       cardElevation={1}
@@ -58,7 +57,7 @@ export default class MajorScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'내과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'내과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={2}
                       cardMaxElevation={2}
@@ -69,7 +68,7 @@ export default class MajorScreen extends Component{
                     </CardView>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'소아청소년과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'소아청소년과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={3}
                       cardMaxElevation={3}
@@ -82,7 +81,7 @@ export default class MajorScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'임상병리과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'임상병리과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={4}
                       cardMaxElevation={4}
@@ -93,7 +92,7 @@ export default class MajorScreen extends Component{
                     </CardView>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'정형외과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'정형외과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={5}
                       cardMaxElevation={5}
@@ -107,7 +106,7 @@ export default class MajorScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'피부과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'피부과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={6}
                       cardMaxElevation={6}
@@ -118,7 +117,7 @@ export default class MajorScreen extends Component{
                     </CardView>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'안과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'안과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={7}
                       cardMaxElevation={7}
@@ -132,7 +131,7 @@ export default class MajorScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'건강검진'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'건강검진'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={8}
                       cardMaxElevation={8}
@@ -143,7 +142,7 @@ export default class MajorScreen extends Component{
                     </CardView>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'소아치과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'소아치과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={9}
                       cardMaxElevation={9}
@@ -157,7 +156,7 @@ export default class MajorScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'성형외과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'성형외과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={10}
                       cardMaxElevation={10}
@@ -168,7 +167,7 @@ export default class MajorScreen extends Component{
                     </CardView>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'마취통증의학과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'마취통증의학과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={11}
                       cardMaxElevation={11}
@@ -182,7 +181,7 @@ export default class MajorScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'방사선종양학과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'방사선종양학과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={12}
                       cardMaxElevation={12}
@@ -193,7 +192,7 @@ export default class MajorScreen extends Component{
                     </CardView>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'비뇨기과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'비뇨기과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={13}
                       cardMaxElevation={13}
@@ -207,7 +206,7 @@ export default class MajorScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'산부인과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'산부인과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={14}
                       cardMaxElevation={14}
@@ -218,7 +217,7 @@ export default class MajorScreen extends Component{
                     </CardView>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'항문과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'항문과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={15}
                       cardMaxElevation={15}
@@ -232,7 +231,7 @@ export default class MajorScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'한의학과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'한의학과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={16}
                       cardMaxElevation={16}
@@ -243,7 +242,7 @@ export default class MajorScreen extends Component{
                     </CardView>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'신경과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'신경과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={17}
                       cardMaxElevation={17}
@@ -257,7 +256,7 @@ export default class MajorScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'신경외과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'신경외과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={18}
                       cardMaxElevation={18}
@@ -268,7 +267,7 @@ export default class MajorScreen extends Component{
                     </CardView>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'흉부외과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'흉부외과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={19}
                       cardMaxElevation={19}
@@ -282,7 +281,7 @@ export default class MajorScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'영상의학과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'영상의학과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={20}
                       cardMaxElevation={20}
@@ -293,7 +292,7 @@ export default class MajorScreen extends Component{
                     </CardView>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'예방의학과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'예방의학과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={21}
                       cardMaxElevation={21}
@@ -307,7 +306,7 @@ export default class MajorScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'외과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'외과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={22}
                       cardMaxElevation={22}
@@ -318,7 +317,7 @@ export default class MajorScreen extends Component{
                     </CardView>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'이비인후과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'이비인후과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={23}
                       cardMaxElevation={23}
@@ -332,7 +331,7 @@ export default class MajorScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'재활의학과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'재활의학과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={24}
                       cardMaxElevation={24}
@@ -343,7 +342,7 @@ export default class MajorScreen extends Component{
                     </CardView>
                   </TouchableOpacity>
 
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'정신건강의학과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'정신건강의학과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={25}
                       cardMaxElevation={25}
@@ -357,7 +356,7 @@ export default class MajorScreen extends Component{
                 </View>
 
                 <View flexDirection="row">
-                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'진단검사의학과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','businessHours')})}>
+                  <TouchableOpacity onPress = {() => this.props.navigation.navigate('Select',{city: this.props.navigation.getParam('city','city'),subject: "'진단검사의학과'",gender: this.props.navigation.getParam('gender','gender'), businessHours: this.props.navigation.getParam('businessHours','24:00-00:00')})}>
                     <CardView
                       cardElevation={26}
                       cardMaxElevation={26}
